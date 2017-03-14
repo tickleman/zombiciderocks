@@ -1,25 +1,27 @@
 body {
-  background: url("img/biohazard.png") no-repeat 100px 300px, url("img/biohazard2.png") no-repeat 700px 900px, url("img/biohazard.png") no-repeat 250px 1700px;
-  background-size: 600px; }
+  background: url("img/mission-border.jpg") no-repeat right bottom; }
   body header {
     background-image: url("img/shadows.jpg");
     height: 267px; }
-    body header .links {
-      display: none; }
   body h1 {
+    background: -webkit-linear-gradient(#eee, #333);
     font-size: 72px;
+    font-style: italic;
     left: 60px;
     position: absolute;
-    font-style: italic;
     text-shadow: 1px 1px #300, 2px 2px #600;
     top: 140px;
-    background: -webkit-linear-gradient(#eee, #333);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent; }
-  body h2 {
-    color: #333;
-    font-size: 2em;
-    font-style: italic;
-    margin: .5em 1em 1em; }
+  body #main {
+    background: url("img/biohazard.png") no-repeat 100px 30px, url("img/biohazard2.png") no-repeat 700px 600px, url("img/biohazard.png") no-repeat 250px 1400px;
+    background-size: 600px;
+    margin-right: 90px; }
+    body #main > * {
+      margin: .5em 1em 1em; }
+    body #main > h2 {
+      color: #333;
+      font-size: 2em;
+      font-style: italic; }
   body #trashcan {
     display: none; }
