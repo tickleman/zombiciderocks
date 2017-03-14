@@ -1,0 +1,10 @@
+/.idea
+/cache
+/itrocks
+/tmp
+/vendor
+
+/composer.lock
+/loc.php
+/pwd.php
+/update

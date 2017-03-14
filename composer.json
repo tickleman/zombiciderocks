@@ -1,0 +1,15 @@
+{
+	"authors":     [{ "name": "tickleman",  "email": "your@email.com" }],
+	"description": "Zombicide Rocks !",
+	"extra": {
+		"installer-paths": { "{$vendor}/{$name}/": ["type:itrocks"] },
+		"installer-types": ["itrocks"]
+	},
+	"license":           "MIT",
+	"minimum-stability": "dev",
+	"name":              "tickleman/zombiciderocks",
+	"prefer-stable":     true,
+	"repositories":      [{ "type": "composer", "url": "https://packages.bappli.com" }],
+	"require":           { "itrocks/framework": "dev-master" },
+	"type":              "itrocks-final"
+}
