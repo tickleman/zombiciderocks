@@ -19,6 +19,12 @@ body {
 		-webkit-text-fill-color: transparent;
 	}
 
+	.actions {
+		.import, .print {
+			display: none;
+		}
+	}
+
 	#main {
 		background:
 			url("img/biohazard.png") no-repeat 100px 30px,

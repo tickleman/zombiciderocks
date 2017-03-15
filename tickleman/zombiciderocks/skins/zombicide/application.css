@@ -13,6 +13,8 @@ body {
     top: 140px;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent; }
+  body .actions .import, body .actions .print {
+    display: none; }
   body #main {
     background: url("img/biohazard.png") no-repeat 100px 30px, url("img/biohazard2.png") no-repeat 700px 600px, url("img/biohazard.png") no-repeat 250px 1400px;
     background-size: 600px;

@@ -8,15 +8,26 @@ use Tickleman\ZombicideRocks;
 /**
  * A zombicide tile into a mission
  *
+ * @display_order tile, top, left, orientation
  * @link ZombicideRocks\Tile
+ * @set Missions_Tiles
+ * @sort top, left
  */
 class Tile extends ZombicideRocks\Tile
 {
 	use Component;
 
+	//----------------------------------------------------------------------------------------- $left
+	/**
+	 * @mandatory
+	 * @max_value 99
+	 * @var integer
+	 */
+	public $left = 1;
+
 	//-------------------------------------------------------------------------------------- $mission
 	/**
-	 * @component
+	 * @composite
 	 * @link Object
 	 * @mandatory
 	 * @var Mission
@@ -31,16 +42,9 @@ class Tile extends ZombicideRocks\Tile
 	 */
 	public $orientation = Orientation::NORTH;
 
-	//----------------------------------------------------------------------------------------- $left
-	/**
-	 * @mandatory
-	 * @max_value 99
-	 * @var integer
-	 */
-	public $left = 1;
-
 	//----------------------------------------------------------------------------------------- $tile
 	/**
+	 * @composite
 	 * @link Object
 	 * @mandatory
 	 * @var ZombicideRocks\Tile

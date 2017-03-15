@@ -1,24 +1,42 @@
 <?php
 namespace Tickleman\ZombicideRocks;
 
-use Box;
-use ITRocks\Framework\User;
+use ITRocks\Framework\Traits\Has_Code;
 use Tickleman\ZombicideRocks\Card;
+use Tickleman\ZombicideRocks\Mission\Author;
 
 /**
  * A mission for Zombicide
  *
  * @business
+ * @display_order code, title, author, difficulty_level, survivors_count, duration, material,
+ *                tiles, equipment_cards, zombie_carts
+ * @sort title
  */
 class Mission
 {
+	use Has_Code;
 
 	//--------------------------------------------------------------------------------------- $author
 	/**
 	 * @link Object
-	 * @var User
+	 * @var Author
 	 */
 	public $author;
+
+	//------------------------------------------------------------------------------------- $duration
+	/**
+	 * @max_size 4
+	 * @var integer
+	 */
+	public $duration;
+
+	//----------------------------------------------------------------------------- $difficulty_level
+	/**
+	 * @values easy, medium, hard
+	 * @var string
+	 */
+	public $difficulty_level;
 
 	//------------------------------------------------------------------------------ $equipment_cards
 	/**
@@ -34,12 +52,26 @@ class Mission
 	 */
 	public $material;
 
+	//------------------------------------------------------------------------------ $survivors_count
+	/**
+	 * @max_size 2
+	 * @var integer
+	 */
+	public $survivors_count;
+
 	//---------------------------------------------------------------------------------------- $tiles
 	/**
 	 * @link Collection
-	 * @var Tile[]
+	 * @var Mission\Tile[]
 	 */
 	public $tiles;
+
+	//---------------------------------------------------------------------------------------- $title
+	/**
+	 * @mandatory
+	 * @var string
+	 */
+	public $title;
 
 	//--------------------------------------------------------------------------------- $zombie_cards
 	/**
@@ -47,5 +79,14 @@ class Mission
 	 * @var Card\Zombie[]
 	 */
 	public $zombie_cards;
+
+	//------------------------------------------------------------------------------------ __toString
+	/**
+	 * @return string
+	 */
+	public function __toString()
+	{
+		return strval($this->title) ?: 'New mission';
+	}
 
 }

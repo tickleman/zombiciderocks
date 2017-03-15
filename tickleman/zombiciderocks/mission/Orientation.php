@@ -7,12 +7,16 @@ namespace Tickleman\ZombicideRocks\Mission;
 class Orientation
 {
 
-	public const EAST = 'east';
+	//------------------------------------------------------------------------------------------ EAST
+	const EAST = 'east';
 
-	public const NORTH = 'north';
+	//----------------------------------------------------------------------------------------- NORTH
+	const NORTH = 'north';
 
-	public const SOUTH = 'south';
+	//----------------------------------------------------------------------------------------- SOUTH
+	const SOUTH = 'south';
 
-	public const WEST = 'west';
+	//------------------------------------------------------------------------------------------ WEST
+	const WEST = 'west';
 
 }
