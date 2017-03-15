@@ -11,6 +11,7 @@ use Tickleman\ZombicideRocks\Mission\Author;
  * @business
  * @display_order code, title, author, difficulty_level, survivors_count, duration, material,
  *                tiles, equipment_cards, zombie_carts
+ * @representative code, title
  * @sort title
  */
 class Mission
@@ -86,7 +87,7 @@ class Mission
 	 */
 	public function __toString()
 	{
-		return strval($this->title) ?: 'New mission';
+		return trim(strval($this->code) . SP . strval($this->title));
 	}
 
 }
