@@ -7,6 +7,7 @@ use ITRocks\Framework\Locale\Language;
 use ITRocks\Framework\Locale\Number_Format;
 use ITRocks\Framework\Plugin\Priority;
 use ITRocks\Framework\View;
+use ITRocks\Framework\Widget\Menu;
 
 global $loc;
 require __DIR__ . '/../../loc.php';
@@ -27,6 +28,19 @@ $config['Tickleman/ZombicideRocks'] = [
 				Number_Format::DECIMAL_MAXIMAL_COUNT => 4,
 				Number_Format::DECIMAL_SEPARATOR     => ',',
 				Number_Format::THOUSAND_SEPARATOR    => SP
+			]
+		],
+		Menu::class => [
+			Menu::TITLE => [SL, 'Home', '#main'],
+			'Databases' => [
+				'/Tickleman/ZombicideRocks/Missions'             => 'Missions',
+				'/Tickleman/ZombicideRocks/Boxes'                => 'Boxes',
+				'/Tickleman/ZombicideRocks/Tiles'                => 'Tiles',
+				'/Tickleman/ZombicideRocks/Card/Equipment_Cards' => 'Equipment cards',
+				'/Tickleman/ZombicideRocks/Card/Zombie_Cards'    => 'Zombie cards',
+			],
+			'Stories' => [
+				'/Tickleman/ZombicideRocks/Blog/Entries' => 'Survivors missions blog'
 			]
 		],
 		View::class => [

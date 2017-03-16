@@ -13,6 +13,8 @@ body {
     top: 140px;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent; }
+    body h1 a {
+      text-decoration: none; }
   body .actions .import, body .actions .print {
     display: none; }
   body #main {
