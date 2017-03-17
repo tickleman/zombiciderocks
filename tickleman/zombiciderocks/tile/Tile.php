@@ -2,6 +2,7 @@
 namespace Tickleman\ZombicideRocks;
 
 use ITRocks\Framework\Traits\Has_Code;
+use Tickleman\ZombicideRocks\Tile\Tag;
 
 /**
  * A tile for Zombicide
@@ -18,6 +19,13 @@ class Tile
 	 * @var Box
 	 */
 	public $box;
+
+	//----------------------------------------------------------------------------------------- $tags
+	/**
+	 * @link Map
+	 * @var Tag[]
+	 */
+	public $tags;
 
 	//------------------------------------------------------------------------------------ __toString
 	/**
