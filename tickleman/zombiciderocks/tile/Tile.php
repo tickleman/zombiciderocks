@@ -9,6 +9,7 @@ use Tickleman\ZombicideRocks\Tile\Tag;
  * A tile for Zombicide
  *
  * @business
+ * @display_order box, code, image, tags
  */
 class Tile
 {
