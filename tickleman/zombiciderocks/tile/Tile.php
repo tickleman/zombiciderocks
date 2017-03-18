@@ -1,6 +1,7 @@
 <?php
 namespace Tickleman\ZombicideRocks;
 
+use ITRocks\Framework\Dao\File;
 use ITRocks\Framework\Traits\Has_Code;
 use Tickleman\ZombicideRocks\Tile\Tag;
 
@@ -19,6 +20,13 @@ class Tile
 	 * @var Box
 	 */
 	public $box;
+
+	//---------------------------------------------------------------------------------------- $image
+	/**
+	 * @link Object
+	 * @var File
+	 */
+	public $image;
 
 	//----------------------------------------------------------------------------------------- $tags
 	/**
