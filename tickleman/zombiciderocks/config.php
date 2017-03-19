@@ -41,6 +41,10 @@ $config['Tickleman/ZombicideRocks'] = [
 			],
 			'Stories' => [
 				'/Tickleman/ZombicideRocks/Blog/Entries' => 'Survivors missions blog'
+			],
+			'Links' => [
+				'/Tickleman/ZombicideRocks/Links'      => 'Links to other sites',
+				'/Tickleman/ZombicideRocks/Link/Tools' => 'Links to tools'
 			]
 		],
 		View::class => [
