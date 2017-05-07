@@ -16,7 +16,8 @@
     display: inline-block;
     padding: .25em; }
     .menu.output > ul > li > ul {
-      display: none; }
+      display: none;
+      list-style: none; }
     .menu.output > ul > li:hover > ul {
       background-color: #333;
       color: #e1e1e1;
