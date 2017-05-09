@@ -9,7 +9,7 @@ body {
     font-style: italic;
     left: 60px;
     position: absolute;
-    text-shadow: 1px 1px #300, 2px 2px #600;
+    text-shadow: 1px 1px #c00, 2px 2px #600;
     top: 140px;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent; }
