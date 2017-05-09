@@ -10,7 +10,6 @@ use ITRocks\Framework\Traits\Has_Caption;
  * Blog image
  *
  * @display_order blog_entry, file, caption, ordering
- * @link File
  * @set Blog_Images
  */
 class Image
@@ -21,7 +20,6 @@ class Image
 
 	//----------------------------------------------------------------------------------------- $file
 	/**
-	 * @composite
 	 * @link Object
 	 * @mandatory
 	 * @var File
@@ -32,7 +30,6 @@ class Image
 	/**
 	 * @composite
 	 * @link Object
-	 * @mandatory
 	 * @var Entry
 	 */
 	public $blog_entry;
