@@ -1,0 +1,39 @@
+.blog.entry.output {
+
+	> h2 {
+		font-size: 3em;
+		text-align: center;
+		font-style: italic;
+	}
+
+	> img.main {
+		float: left;
+		margin-right: 1em;
+		vertical-align: bottom;
+	}
+
+	> img.side {
+		float: right;
+		margin-top: 5em;
+		margin-left: -170px;
+	}
+
+	> p {
+		font-size: 1.5em;
+		margin: 0;
+		text-align: justify;
+		white-space: pre-line;
+	}
+
+	> ul.images {
+		clear: both;
+		list-style: none;
+		margin-top: 1em;
+		text-align: center;
+
+		> li {
+			display: inline-block;
+			margin: 4px;
+		}
+	}
+}

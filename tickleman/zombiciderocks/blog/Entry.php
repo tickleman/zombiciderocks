@@ -95,6 +95,24 @@ class Entry
 		return Loc::dateToLocale($this->date) . $this->title ? (SP . $this->title) : '';
 	}
 
+	//------------------------------------------------------------------------------------- mainImage
+	/**
+	 * @return Image
+	 */
+	public function mainImage()
+	{
+		return reset($this->images);
+	}
+
+	//------------------------------------------------------------------------------- secondaryImages
+	/**
+	 * @return Image[]
+	 */
+	public function secondaryImages()
+	{
+		return array_slice($this->images, 1);
+	}
+
 	//------------------------------------------------------------------------------------ setMission
 	/**
 	 * @param $mission Mission

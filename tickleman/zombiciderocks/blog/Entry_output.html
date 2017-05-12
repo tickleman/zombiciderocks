@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+	<meta charset="UTF-8">
+	<title>ZR. |{title.ucwords}|</title>
+</head>
+<body>
+<!--BEGIN-->
+
+	<div class="blog entry output">
+		<h2>{title}</h2>
+
+		<!--mainImage?-->
+		<img class="main" src="{mainImage.link}?width=400" title="{?caption}">
+		<!--mainImage?-->
+		<img class="side" src="../img/zombivant-phal.png">
+		<p>
+			{story}
+		</p>
+
+		<ul class="images">
+			<!--secondaryImages-->
+			<li><img src="{link}{file.name}?width=200" title="{?caption}"></li>
+			<!--secondaryImages-->
+		</ul>
+	</div>
+
+<!--END-->
+</body>
+</html>
