@@ -2,6 +2,7 @@
 namespace Tickleman\ZombicideRocks;
 
 use ITRocks\Framework\Configuration;
+use ITRocks\Framework\Dao\Mysql\File_Logger;
 use ITRocks\Framework\Locale;
 use ITRocks\Framework\Locale\Language;
 use ITRocks\Framework\Locale\Number_Format;
@@ -30,6 +31,7 @@ $config['Tickleman/ZombicideRocks'] = [
 				Number_Format::THOUSAND_SEPARATOR    => SP
 			]
 		],
+		File_Logger::class,
 		Menu::class => [
 			Menu::TITLE => [SL, 'Home', '#main'],
 			'Databases' => [
