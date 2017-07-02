@@ -1,0 +1,61 @@
+.mission.output {
+  font-family: Helvetica-Neue-LT-Std, Helvetica, serif; }
+  .mission.output > h2 {
+    color: #f89d0e;
+    font-family: Impact, Helvetica, serif;
+    font-size: 40px;
+    font-weight: normal;
+    margin-bottom: .6em; }
+    .mission.output > h2 > .code {
+      font-size: 200%; }
+    .mission.output > h2 > .title {
+      margin-left: .5em;
+      text-transform: uppercase; }
+  .mission.output > ul.characteristics {
+    font-family: Impact, Helvetica, serif;
+    font-size: 18px;
+    list-style: none;
+    text-transform: uppercase; }
+    .mission.output > ul.characteristics > li {
+      display: inline-block; }
+      .mission.output > ul.characteristics > li:not(:first-child):before {
+        content: ' / '; }
+  .mission.output > .introduction {
+    white-space: pre-line;
+    font-family: Gorri-Sans, Helvetica, serif;
+    font-size: 16px;
+    line-height: 1.5em;
+    padding: .5em 0; }
+  .mission.output > .material {
+    margin: .5em 0; }
+    .mission.output > .material > h3 {
+      display: inline-block;
+      font-weight: normal; }
+    .mission.output > .material > ul {
+      display: inline-block; }
+      .mission.output > .material > ul:before {
+        content: ' : '; }
+      .mission.output > .material > ul > li {
+        display: inline-block;
+        font-weight: bold;
+        text-transform: uppercase; }
+        .mission.output > .material > ul > li:not(:first-child):not(:last-child):before {
+          content: ', '; }
+        .mission.output > .material > ul > li:not(:first-child):last-child:before {
+          content: 'et ';
+          margin-left: .3em;
+          text-transform: none; }
+  .mission.output > .objectives > h3, .mission.output .special.rules > h3 {
+    color: #7b7979;
+    font-family: Crack-House, Helvetica, serif;
+    font-size: 32px;
+    margin: .5em 0;
+    text-transform: uppercase; }
+  .mission.output > .objectives > ul, .mission.output .special.rules > ul {
+    padding-left: 16px; }
+    .mission.output > .objectives > ul > li, .mission.output .special.rules > ul > li {
+      margin: 1em 0; }
+      .mission.output > .objectives > ul > li > *, .mission.output .special.rules > ul > li > * {
+        display: inline-block; }
+      .mission.output > .objectives > ul > li > h4:not(:empty):after, .mission.output .special.rules > ul > li > h4:not(:empty):after {
+        content: '. '; }

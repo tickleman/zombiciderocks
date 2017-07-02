@@ -1,0 +1,104 @@
+.mission.output {
+
+	font-family: Helvetica-Neue-LT-Std, Helvetica, serif;
+
+	> h2 {
+		color: #f89d0e;
+		font-family: Impact, Helvetica, serif;
+		font-size: 40px;
+		font-weight: normal;
+		margin-bottom: .6em;
+
+		> .code {
+			font-size: 200%;
+		}
+
+		> .title {
+			margin-left: .5em;
+			text-transform: uppercase;
+		}
+	}
+
+	> ul.characteristics {
+		font-family: Impact, Helvetica, serif;
+		font-size: 18px;
+		list-style: none;
+		text-transform: uppercase;
+
+		> li {
+			display: inline-block;
+
+			&:not(:first-child):before {
+				content: ' / ';
+			}
+		}
+	}
+
+	> .introduction {
+		white-space: pre-line;
+		font-family: Gorri-Sans, Helvetica, serif;
+		font-size: 16px;
+		line-height: 1.5em;
+		padding: .5em 0;
+	}
+
+	> .material {
+		margin: .5em 0;
+
+		> h3 {
+			display: inline-block;
+			font-weight: normal;
+		}
+
+		> ul {
+			display: inline-block;
+
+			&:before {
+				content: ' : ';
+			}
+
+			> li {
+				display: inline-block;
+				font-weight: bold;
+				text-transform: uppercase;
+
+				&:not(:first-child):not(:last-child):before {
+					content: ', ';
+				}
+
+				&:not(:first-child):last-child:before {
+					content: 'et ';
+					margin-left: .3em;
+					text-transform: none;
+				}
+			}
+		}
+	}
+
+	> .objectives, .special.rules {
+
+		> h3 {
+			color: #7b7979;
+			font-family: Crack-House, Helvetica, serif;
+			font-size: 32px;
+			margin: .5em 0;
+			text-transform: uppercase;
+		}
+
+		> ul {
+			padding-left: 16px;
+
+			> li {
+				margin: 1em 0;
+
+				> * {
+					display: inline-block;
+				}
+
+				> h4:not(:empty):after {
+					content: '. ';
+				}
+			}
+		}
+	}
+}

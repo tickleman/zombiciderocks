@@ -15,17 +15,23 @@ body {
     -webkit-text-fill-color: transparent; }
     body h1 a {
       text-decoration: none; }
+  body > h2 {
+    color: #333;
+    font-size: 2em;
+    font-style: italic; }
   body .actions .import, body .actions .print {
     display: none; }
+  body .output .actions {
+    position: absolute;
+    right: 2em; }
+    body .output .actions a {
+      height: 1.1em;
+      line-height: 1.4em; }
   body #main {
     background: url("img/biohazard.png") no-repeat 100px 30px, url("img/biohazard2.png") no-repeat 700px 600px, url("img/biohazard.png") no-repeat 250px 1400px;
     background-size: 600px;
     margin-right: 90px; }
     body #main > * {
       margin: .5em 1em 1em; }
-    body #main > h2 {
-      color: #333;
-      font-size: 2em;
-      font-style: italic; }
   body #trashcan {
     display: none; }

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+	<meta charset="UTF-8">
+	<title>ZR. |{title.ucwords}|</title>
+</head>
+<body>
+<!--BEGIN-->
+
+	<div class="mission output">
+
+		<ul class="actions"><li><a href="/{@class}/{id}/edit">edit</a></li></ul>
+
+		<h2>
+			<!--code?--><span class="code">{code}</span><!--code?-->
+			<span class="title">{title}</span>
+		</h2>
+
+		<ul class="characteristics">
+			<li class="level">{difficulty_level}</li>
+			<li class="survivors">{survivors_count} |survivors|</li>
+			<li class="duration">{duration} |minutes|</li>
+		</ul>
+
+		<!--introduction?-->
+		<p class="introduction">
+			{introduction}
+		</p>
+		<!--introduction?-->
+
+		<!--tiles?-->
+		<div class="material">
+			<h3>|Required tiles|</h3>
+			<ul><!--tiles--><li>{code}</li><!--tiles--></ul>
+		</div>
+		<!--tiles?-->
+
+		<!--objectives?-->
+		<div class="objectives">
+			<h3>|Objectives|</h3>
+			<ul><!--objectives--><li><h4>{title}</h4><p>{description}</p></li><!--objectives--></ul>
+		</div>
+		<!--objectives?-->
+
+		<!--special_rules?-->
+		<div class="special rules">
+			<h3>|Special rules|</h3>
+			<ul><!--special_rules--><li><h4>{title}</h4><p>{description}</p></li><!--special_rules--></ul>
+		</div>
+		<!--special_rules?-->
+
+	</div>
+
+<!--END-->
+</body>
+</html>
