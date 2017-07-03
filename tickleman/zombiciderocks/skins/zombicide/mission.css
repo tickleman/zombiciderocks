@@ -49,8 +49,9 @@
     color: #7b7979;
     font-family: Crack-House, Helvetica, serif;
     font-size: 32px;
-    margin: .5em 0;
-    text-transform: uppercase; }
+    font-variant: small-caps;
+    font-weight: normal;
+    margin: .5em 0; }
   .mission.output > .objectives > ul, .mission.output .special.rules > ul {
     padding-left: 16px; }
     .mission.output > .objectives > ul > li, .mission.output .special.rules > ul > li {
