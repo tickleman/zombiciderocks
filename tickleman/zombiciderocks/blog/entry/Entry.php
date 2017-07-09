@@ -10,8 +10,10 @@ use Tickleman\ZombicideRocks\Mission;
  * Zombicide missions blog entry
  *
  * @display_order title, mission, date, user, players_count, survivors_count, duration
+ * @list date, title, user.login, mission.title
  * @representative user.login, title
  * @set Blog_Entries
+ * @sort -date, title
  */
 class Entry
 {

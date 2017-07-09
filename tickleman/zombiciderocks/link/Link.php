@@ -5,7 +5,9 @@ namespace Tickleman\ZombicideRocks;
  * Stores a link
  *
  * @display_order title, url, description
+ * @list title, url
  * @representative title
+ * @sort title
  */
 class Link
 {
