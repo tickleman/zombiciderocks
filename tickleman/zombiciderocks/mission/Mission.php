@@ -96,6 +96,8 @@ class Mission
 
 	//---------------------------------------------------------------------------------- $tiles_image
 	/**
+	 * @user invisible
+	 * @store false
 	 * @var string
 	 */
 	private $tiles_image;
