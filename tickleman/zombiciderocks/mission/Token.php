@@ -43,8 +43,8 @@ class Token extends ZombicideRocks\Token
 
 	//---------------------------------------------------------------------------------------- $token
 	/**
+	 * @composite
 	 * @link Object
-	 * @mandatory
 	 * @var ZombicideRocks\Token
 	 */
 	public $token;

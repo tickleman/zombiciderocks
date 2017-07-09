@@ -46,8 +46,8 @@ class Tile extends ZombicideRocks\Tile
 
 	//----------------------------------------------------------------------------------------- $tile
 	/**
+	 * @composite
 	 * @link Object
-	 * @mandatory
 	 * @var ZombicideRocks\Tile
 	 */
 	public $tile;
