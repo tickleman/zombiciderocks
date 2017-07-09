@@ -98,7 +98,7 @@ class Grid
 	protected function initGrid()
 	{
 		list($width, $height) = $this->dimensions();
-		return array_fill(0, $height - 1, array_fill(0, $width - 1, null));
+		return ($height && $width) ? array_fill(0, $height - 1, array_fill(0, $width - 1, null)) : [];
 	}
 
 	//---------------------------------------------------------------------------------------- toGrid

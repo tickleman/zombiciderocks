@@ -94,6 +94,12 @@ class Mission
 	 */
 	public $tiles;
 
+	//---------------------------------------------------------------------------------- $tiles_image
+	/**
+	 * @var string
+	 */
+	private $tiles_image;
+
 	//---------------------------------------------------------------------------------------- $title
 	/**
 	 * @mandatory
@@ -132,12 +138,17 @@ class Mission
 	 */
 	public function tilesImage()
 	{
-		$grid            = new Grid($this);
-		$image           = $grid->toImage();
-		$image_file_name = 'mission-' . strtolower($this->code) . '.jpg';
-		/** @var $session_files Files */
-		$session_files = Session::current()->get(Files::class, true);
-		return $session_files->addAndGetLink($image->asFile($image_file_name));
+		if (!isset($this->tiles_image)) {
+			$grid            = new Grid($this);
+			$image           = $grid->toImage();
+			$image_file_name = 'mission-' . strtolower($this->code) . '.jpg';
+			/** @var $session_files Files */
+			$session_files     = Session::current()->get(Files::class, true);
+			$this->tiles_image = $image
+				? $session_files->addAndGetLink($image->asFile($image_file_name))
+				: '';
+		}
+		return $this->tiles_image;
 	}
 
 }
