@@ -9,7 +9,7 @@ use ITRocks\Framework\Traits\Has_Name;
  *
  * @business
  * @display_order boxes, name, image
- * @list boxes, name, image.name
+ * @list boxes.name, name, image.name
  * @representative name
  */
 class Token
