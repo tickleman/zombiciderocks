@@ -35,13 +35,16 @@ body {
 		}
 	}
 
-	.output .actions {
-		position: absolute;
-		right: 2em;
+	.blog.output, .mission.output {
 
-		a {
-			height: 1.1em;
-			line-height: 1.4em;
+		.actions {
+			position: absolute;
+			right: 2em;
+
+			a {
+				height: 1.1em;
+				line-height: 1.4em;
+			}
 		}
 	}
 

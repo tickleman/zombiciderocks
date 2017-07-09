@@ -21,10 +21,10 @@ body {
     font-style: italic; }
   body .actions .import, body .actions .print {
     display: none; }
-  body .output .actions {
+  body .blog.output .actions, body .mission.output .actions {
     position: absolute;
     right: 2em; }
-    body .output .actions a {
+    body .blog.output .actions a, body .mission.output .actions a {
       height: 1.1em;
       line-height: 1.4em; }
   body #main {
