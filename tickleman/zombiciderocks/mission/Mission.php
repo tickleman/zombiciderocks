@@ -1,10 +1,13 @@
 <?php
 namespace Tickleman\ZombicideRocks;
 
+use ITRocks\Framework\Dao\File\Session_File\Files;
+use ITRocks\Framework\Session;
 use ITRocks\Framework\Traits\Has_Code;
 use Tickleman\ZombicideRocks\Mission\Author;
 use Tickleman\ZombicideRocks\Mission\Objective;
 use Tickleman\ZombicideRocks\Mission\Special_Rule;
+use Tickleman\ZombicideRocks\Mission\Tile\Grid;
 
 /**
  * A mission for Zombicide
@@ -111,6 +114,22 @@ class Mission
 	public function __toString()
 	{
 		return trim(strval($this->code) . SP . strval($this->title));
+	}
+
+	//------------------------------------------------------------------------------------ tilesImage
+	/**
+	 * Creates an image for current mission tiles and tokens and returns a link to this image
+	 *
+	 * @return string
+	 */
+	public function tilesImage()
+	{
+		$grid            = new Grid($this);
+		$image           = $grid->toImage();
+		$image_file_name = 'mission-' . strtolower($this->code) . '.jpg';
+		/** @var $session_files Files */
+		$session_files = Session::current()->get(Files::class, true);
+		return $session_files->addAndGetLink($image->asFile($image_file_name));
 	}
 
 }

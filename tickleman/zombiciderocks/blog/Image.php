@@ -45,9 +45,8 @@ class Image
 	public function link()
 	{
 		/** @var $session_files Files */
-		$session_files          = Session::current()->get(Files::class, true);
-		$session_files->files[] = $this->file;
-		return '/ITRocks/Framework/Dao/File/Session_File/output/' . $this->file->name;
+		$session_files = Session::current()->get(Files::class, true);
+		return $session_files->addAndGetLink($this->file);
 	}
 
 }
