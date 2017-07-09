@@ -4,7 +4,6 @@ namespace Tickleman\ZombicideRocks\Mission\Tile;
 use ITRocks\Framework\Tools\Image;
 use Tickleman\ZombicideRocks\Mission;
 use Tickleman\ZombicideRocks\Mission\Orientation;
-use Tickleman\ZombicideRocks\Mission\Tile;
 
 /**
  * Two-dimensional grid representation of tiles
@@ -93,7 +92,7 @@ class Grid
 
 	//-------------------------------------------------------------------------------------- initGrid
 	/**
-	 * @return array null[1..height][1..width]
+	 * @return array null[0..$height-1][0..$width-1]
 	 */
 	protected function initGrid()
 	{
@@ -122,23 +121,30 @@ class Grid
 	{
 		$grid = $this->toGrid();
 		if ($grid) {
-			/** @var $tile Tile */
-			$tile       = $grid[0][0];
-			$tile_image = Image::createFromFile($tile->image);
-			$image      = $tile_image->newImageKeepsAlpha(
-				$this->width  * $tile_image->width,
-				$this->height * $tile_image->height
-			);
-			foreach ($grid as $top => $row) {
-				foreach ($row as $left => $tile) {
-					if ($left || $top) {
-						$tile_image = Image::createFromFile($tile->image);
-					}
-					$tile_image = $tile_image->rotate(Orientation::angle($tile->orientation));
-					$image->paste($tile_image, $left * $tile_image->width, $top * $tile_image->height);
+			foreach ($this->mission->tiles as $tile) {
+				if ($tile->image) {
+					$tile_image = Image::createFromFile($tile->image);
+					break;
 				}
 			}
-			return $image;
+			if (isset($tile_image)) {
+				$image = $tile_image->newImageKeepsAlpha(
+					$this->width  * $tile_image->width,
+					$this->height * $tile_image->height
+				);
+				foreach ($grid as $top => $row) {
+					foreach ($row as $left => $tile) {
+						if ($tile && $tile->image) {
+							$tile_image = Image::createFromFile($tile->image);
+							if ($tile->orientation !== Orientation::NORTH) {
+								$tile_image = $tile_image->rotate(Orientation::angle($tile->orientation));
+							}
+							$image->paste($tile_image, $left * $tile_image->width, $top * $tile_image->height);
+						}
+					}
+				}
+				return $image;
+			}
 		}
 		return null;
 	}
