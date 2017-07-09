@@ -32,7 +32,6 @@ class Tile extends ZombicideRocks\Tile
 	/**
 	 * @composite
 	 * @link Object
-	 * @mandatory
 	 * @var Mission
 	 */
 	public $mission;
@@ -47,7 +46,6 @@ class Tile extends ZombicideRocks\Tile
 
 	//----------------------------------------------------------------------------------------- $tile
 	/**
-	 * @composite
 	 * @link Object
 	 * @mandatory
 	 * @var ZombicideRocks\Tile

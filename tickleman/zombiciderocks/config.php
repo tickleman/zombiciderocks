@@ -38,8 +38,9 @@ $config['Tickleman/ZombicideRocks'] = [
 				'/Tickleman/ZombicideRocks/Missions'             => 'Missions',
 				'/Tickleman/ZombicideRocks/Boxes'                => 'Boxes',
 				'/Tickleman/ZombicideRocks/Tiles'                => 'Tiles',
+				'/Tickleman/ZombicideRocks/Tokens'               => 'Tokens',
 				'/Tickleman/ZombicideRocks/Card/Equipment_Cards' => 'Equipment cards',
-				'/Tickleman/ZombicideRocks/Card/Zombie_Cards'    => 'Zombie cards',
+				'/Tickleman/ZombicideRocks/Card/Zombie_Cards'    => 'Zombie cards'
 			],
 			'Stories' => [
 				'/Tickleman/ZombicideRocks/Blog/Entries' => 'Survivors missions blog'
