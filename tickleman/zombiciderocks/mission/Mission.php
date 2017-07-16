@@ -15,6 +15,11 @@ use Tickleman\ZombicideRocks\Mission\Tile\Grid;
  * @business
  * @display_order code, title, difficulty_level, survivors_count, duration, author, introduction,
  *                material, tiles, equipment_cards, zombie_cards, objectives, special_rules
+ * @group _top code, title
+ * @group Main difficulty_level, survivors_count, duration, author
+ * @group Story introduction, objectives, special_rules
+ * @group Material material, equipment_cards, zombie_cards
+ * @group Map tiles, tokens
  * @list code, title, difficulty_level, survivors_count, duration, author.name
  * @representative code, title
  * @sort code, title
