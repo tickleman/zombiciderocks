@@ -71,9 +71,8 @@ class Tile extends ZombicideRocks\Tile
 			$image = $image->rotate(Orientation::angle($this->orientation));
 		}
 		/** @var $session_files Files */
-		$session_files          = Session::current()->get(Files::class, true);
-		$session_files->files[] = $file = $image->asFile();
-		return $file->getTemporaryFileUri();
+		$session_files = Session::current()->get(Files::class, true);
+		return $session_files->addAndGetLink($image->asFile());
 	}
 
 }

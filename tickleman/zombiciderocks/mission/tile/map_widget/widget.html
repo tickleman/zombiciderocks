@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+	<meta charset="UTF-8">
+	<title>ZR. |{title.ucwords}|</title>
+</head>
+<body>
+<!--BEGIN-->
+
+	<div class="map">
+		<!--grid.toGrid-->
+		<div>
+			<!--.-->
+			<div data-code="{code}" data-id="{id}" data-orientation="{orientation}">
+				<img src="{uri}">
+			</div>
+			<!--.-->
+		</div>
+		<!--grid.toGrid-->
+	</div>
+
+	<ul class="material">
+		<h2>|Material|</h2>
+		<!--mission.material-->
+		<li>
+			<h3>{name}</h3>
+			<ul>
+				<!--tiles-->
+				<li class="{code}">{image.@image('100')}</li>
+				<!--tiles-->
+			</ul>
+		</li>
+		<!--mission.material-->
+	</ul>
+
+<!--END-->
+</body>
+</html>

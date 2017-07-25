@@ -96,6 +96,7 @@ class Mission
 	/**
 	 * @link Collection
 	 * @var Mission\Tile[]
+	 * @widget Mission\Tile\Map_Widget
 	 */
 	public $tiles;
 

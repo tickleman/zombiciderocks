@@ -1,0 +1,24 @@
+.mission.edit.window .tiles.multiple {
+
+	ul.material {
+		background: white;
+		bottom: 0;
+		overflow: scroll;
+		position: fixed;
+		right: 90px;
+		top: 0;
+
+		> li > ul {
+			display: block;
+			width: 210px;
+
+			> li {
+				display: inline-block;
+
+				> img {
+					cursor: pointer;
+				}
+			}
+		}
+	}
+}

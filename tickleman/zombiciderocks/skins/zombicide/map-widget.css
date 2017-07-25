@@ -1,0 +1,14 @@
+.mission.edit.window .tiles.multiple ul.material {
+  background: white;
+  bottom: 0;
+  overflow: scroll;
+  position: fixed;
+  right: 90px;
+  top: 0; }
+  .mission.edit.window .tiles.multiple ul.material > li > ul {
+    display: block;
+    width: 210px; }
+    .mission.edit.window .tiles.multiple ul.material > li > ul > li {
+      display: inline-block; }
+      .mission.edit.window .tiles.multiple ul.material > li > ul > li > img {
+        cursor: pointer; }
