@@ -1,14 +1,32 @@
-.mission.edit.window .tiles.multiple ul.material {
-  background: white;
-  bottom: 0;
-  overflow: scroll;
-  position: fixed;
-  right: 90px;
-  top: 0; }
-  .mission.edit.window .tiles.multiple ul.material > li > ul {
-    display: block;
-    width: 210px; }
-    .mission.edit.window .tiles.multiple ul.material > li > ul > li {
-      display: inline-block; }
-      .mission.edit.window .tiles.multiple ul.material > li > ul > li > img {
-        cursor: pointer; }
+.mission.edit.window .multiple.tiles {
+  text-align: center; }
+  .mission.edit.window .multiple.tiles table.map {
+    display: inline-table; }
+    .mission.edit.window .multiple.tiles table.map td.more {
+      background-color: lightgray;
+      color: transparent;
+      font-size: 1px; }
+    .mission.edit.window .multiple.tiles table.map tr:hover {
+      background-color: inherit; }
+    .mission.edit.window .multiple.tiles table.map tr.more {
+      height: 32px; }
+      .mission.edit.window .multiple.tiles table.map tr.more.top {
+        caption-side: top; }
+    .mission.edit.window .multiple.tiles table.map tr td.more {
+      width: 32px; }
+    .mission.edit.window .multiple.tiles table.map tr td img {
+      cursor: pointer; }
+  .mission.edit.window .multiple.tiles div.material {
+    background: white;
+    bottom: 0;
+    overflow: scroll;
+    position: fixed;
+    right: 90px;
+    top: 0; }
+    .mission.edit.window .multiple.tiles div.material > ul > li > ul {
+      display: block;
+      width: 210px; }
+      .mission.edit.window .multiple.tiles div.material > ul > li > ul > li {
+        display: inline-block; }
+        .mission.edit.window .multiple.tiles div.material > ul > li > ul > li > img {
+          cursor: pointer; }

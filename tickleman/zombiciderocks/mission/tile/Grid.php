@@ -43,6 +43,17 @@ class Grid
 		}
 	}
 
+	//--------------------------------------------------------------------------------------- columns
+	/**
+	 * Returns an array of one element per grid column (this element is a single boolean that equals true)
+	 *
+	 * @return boolean[] true[]
+	 */
+	public function columns()
+	{
+		return array_fill(0, $this->getWidth(), true);
+	}
+
 	//------------------------------------------------------------------------------------ dimensions
 	/**
 	 * @return integer[] [0 => $width, 1 => $height]

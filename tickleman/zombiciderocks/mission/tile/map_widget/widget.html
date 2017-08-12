@@ -7,31 +7,45 @@
 <body>
 <!--BEGIN-->
 
-	<div class="map">
+	<table class="map">
+		<tr class="more top">
+			<td class="more top left"></td>
+			<!--grid.columns--><td class="more top">|top|</td><!--grid.columns-->
+			<td class="more top right"></td>
+		</tr>
 		<!--grid.toGrid-->
-		<div>
+		<tr>
+			<td class="more left">|left|</td>
 			<!--.-->
-			<div data-code="{code}" data-id="{id}" data-orientation="{orientation}">
+			<td data-code="{code}" data-id="{id}" data-orientation="{orientation}">
 				<img src="{uri}">
-			</div>
+			</td>
 			<!--.-->
-		</div>
+			<td class="more right">|right|</td>
+		</tr>
 		<!--grid.toGrid-->
-	</div>
+		<tr class="more bottom">
+			<td class="more bottom left"></td>
+			<!--grid.columns--><td class="more bottom">|bottom|</td><!--grid.columns-->
+			<td class="more bottom right"></td>
+		</tr>
+	</table>
 
-	<ul class="material">
+	<div class="material">
 		<h2>|Material|</h2>
-		<!--mission.material-->
-		<li>
-			<h3>{name}</h3>
-			<ul>
-				<!--tiles-->
-				<li class="{code}">{image.@image('100')}</li>
-				<!--tiles-->
-			</ul>
-		</li>
-		<!--mission.material-->
-	</ul>
+		<ul class="material">
+			<!--mission.material-->
+			<li>
+				<h3>{name}</h3>
+				<ul>
+					<!--tiles-->
+					<li class="{code}">{image.@image('100')}</li>
+					<!--tiles-->
+				</ul>
+			</li>
+			<!--mission.material-->
+		</ul>
+	</div>
 
 <!--END-->
 </body>

@@ -1,6 +1,43 @@
-.mission.edit.window .tiles.multiple {
+.mission.edit.window .multiple.tiles {
+	text-align: center;
 
-	ul.material {
+	table.map {
+		display: inline-table;
+
+		td.more {
+			background-color: lightgray;
+			color: transparent;
+			font-size: 1px;
+		}
+
+		tr {
+
+			&:hover {
+				background-color: inherit;
+			}
+
+			&.more {
+				height: 32px;
+
+				&.top {
+					caption-side: top;
+				}
+			}
+
+			td {
+
+				&.more {
+					width: 32px;
+				}
+
+				img {
+					cursor: pointer;
+				}
+			}
+		}
+	}
+
+	div.material {
 		background: white;
 		bottom: 0;
 		overflow: scroll;
@@ -8,7 +45,7 @@
 		right: 90px;
 		top: 0;
 
-		> li > ul {
+		> ul > li > ul {
 			display: block;
 			width: 210px;
 
