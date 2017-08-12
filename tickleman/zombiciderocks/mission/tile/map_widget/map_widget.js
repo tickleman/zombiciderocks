@@ -117,10 +117,12 @@ $(document).ready(function()
 		 */
 		$('.multiple.tiles .map img').contextmenu(right_click = function(event)
 		{
-			var $img   = $(this);
-			var rotate = parseInt($img.attr('src').rParse('?rotate='));
-			rotate     = ((isNaN(rotate) ? 0 : rotate) + 90) % 360;
+			var $img    = $(this);
+			var convert = { 0: 'north', 90: 'west', 180: 'south', 270: 'east' };
+			var rotate  = parseInt($img.attr('src').rParse('?rotate='));
+			rotate      = ((isNaN(rotate) ? 0 : rotate) + 90) % 360;
 			$img.attr('src', $img.attr('src').lParse('?rotate=') + '?rotate=' + rotate);
+			$img.attr('data-rotate', convert[rotate]).data('rotate', convert[rotate]);
 			event.preventDefault();
 		});
 

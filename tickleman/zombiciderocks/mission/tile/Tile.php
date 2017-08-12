@@ -67,12 +67,13 @@ class Tile extends ZombicideRocks\Tile
 	public function uri()
 	{
 		$image = Image::createFromFile($this->image);
-		if ($this->orientation !== Orientation::NORTH) {
-			$image = $image->rotate(Orientation::angle($this->orientation));
-		}
 		/** @var $session_files Files */
 		$session_files = Session::current()->get(Files::class, true);
-		return $session_files->addAndGetLink($image->asFile());
+		$uri           = $session_files->addAndGetLink($image->asFile($this->image->name));
+		if ($this->orientation !== Orientation::NORTH) {
+			$uri .= '?rotate=' . Orientation::angle($this->orientation);
+		}
+		return $uri;
 	}
 
 }
