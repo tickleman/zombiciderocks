@@ -2,6 +2,7 @@
 namespace Tickleman\ZombicideRocks;
 
 use ITRocks\Framework\Dao\File;
+use ITRocks\Framework\Mapper\Component;
 use ITRocks\Framework\Traits\Has_Code;
 use Tickleman\ZombicideRocks\Tile\Tag;
 
@@ -15,10 +16,12 @@ use Tickleman\ZombicideRocks\Tile\Tag;
  */
 class Tile
 {
+	use Component;
 	use Has_Code;
 
 	//------------------------------------------------------------------------------------------ $box
 	/**
+	 * @composite
 	 * @link Object
 	 * @var Box
 	 */
