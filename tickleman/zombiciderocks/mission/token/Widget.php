@@ -1,30 +1,25 @@
 <?php
-namespace Tickleman\ZombicideRocks\Mission\Tile;
+namespace Tickleman\ZombicideRocks\Mission\Token;
 
 use ITRocks\Framework\Dao;
 use ITRocks\Framework\Locale\Loc;
 use ITRocks\Framework\View;
 use ITRocks\Framework\View\Html\Builder\Property;
+use Tickleman\ZombicideRocks;
 use Tickleman\ZombicideRocks\Mission;
-use Tickleman\ZombicideRocks\Mission\Tile;
+use Tickleman\ZombicideRocks\Mission\Token;
 
 /**
- * Mission tile map widget : everything to build a map with your mouse
+ * Mission token map widget : graphical tokens display and value building
  *
- * @override value @var Tile[]
- * @property Tile[] value
+ * @override value @var Token[]
+ * @property Token[] value
  */
-class Map_Widget extends Property
+class Widget extends Property
 {
 
 	//--------------------------------------------------------------------------------------- FEATURE
-	const FEATURE = 'widget';
-
-	//----------------------------------------------------------------------------------------- $grid
-	/**
-	 * @var Grid
-	 */
-	public $grid;
+	const FEATURE = 'token_widget';
 
 	//-------------------------------------------------------------------------------------- $mission
 	/**
@@ -38,7 +33,7 @@ class Map_Widget extends Property
 	 */
 	public function __toString()
 	{
-		return Loc::tr('!' . count($this->value) . '! tiles');
+		return Loc::tr('!' . count($this->value) . '! tokens');
 	}
 
 	//------------------------------------------------------------------------------------- buildHtml
@@ -48,7 +43,6 @@ class Map_Widget extends Property
 	public function buildHtml()
 	{
 		$this->mission = $this->template->getParameter(Mission::class);
-		$this->grid    = new Grid($this->mission);
 		array_unshift($this->parameters, $this);
 		return View::run($this->parameters, [], [], get_class($this), static::FEATURE);
 	}
@@ -57,29 +51,21 @@ class Map_Widget extends Property
 	/**
 	 * @param $object        object
 	 * @param $null_if_empty boolean
-	 * @return Tile[]
+	 * @return Token[]
 	 */
 	public function buildValue($object, $null_if_empty)
 	{
-		$top   = 0;
-		$tiles = [];
-		foreach (json_decode($this->value) as $row) {
-			$left = 0;
-			$top ++;
-			foreach ($row as $cell) {
-				if ($cell) {
-					list($code, $orientation) = $cell;
-					$left ++;
-					$tile              = new Tile();
-					$tile->left        = $left;
-					$tile->orientation = $orientation;
-					$tile->tile        = Dao::searchOne(['code' => $code], Tile::class);
-					$tile->top         = $top;
-					$tiles[]           = $tile;
-				}
-			}
+		$tokens = [];
+		foreach (json_decode($this->value) as $value) {
+			list($code, $left, $top, $orientation) = $value;
+			$token              = new Token();
+			$token->left        = $left;
+			$token->orientation = $orientation;
+			$token->token       = Dao::searchOne(['code' => $code], ZombicideRocks\Token::class);
+			$token->top         = $top;
+			$tokens[]           = $tokens;
 		}
-		return $tiles;
+		return $tokens;
 	}
 
 }

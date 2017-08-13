@@ -20,15 +20,7 @@
           height: 32px; }
         .mission.edit.window .multiple.tiles table.map tr td.more.left, .mission.edit.window .multiple.tiles table.map tr td.more.right {
           width: 32px; }
-  .mission.edit.window .multiple.tiles div.material {
-    background: white;
-    bottom: 0;
-    overflow: scroll;
-    position: fixed;
-    right: 90px;
-    top: 0; }
-    .mission.edit.window .multiple.tiles div.material > ul > li > ul {
-      display: block;
+  .mission.edit.window .multiple.tiles .tiles.material {
+    right: 90px; }
+    .mission.edit.window .multiple.tiles .tiles.material > ul > li > ul {
       width: 210px; }
-      .mission.edit.window .multiple.tiles div.material > ul > li > ul > li {
-        display: inline-block; }

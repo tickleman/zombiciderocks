@@ -32,6 +32,8 @@ J'enchaîne donc avec la création d'un fansite (de plus) qui me servira de base
 
 12/08/2017 - Editeur de [misions](https://zombicide.rocks/index/Tickleman/ZombicideRocks/Missions) : glisser-déposer des tuiles, rotations, ajout de lignes et de colonnes sur le plan, favicon pour le site
 
+13/08/2017 - Editeur de [misions](https://zombicide.rocks/index/Tickleman/ZombicideRocks/Missions) : sauvegarde de la disposition des tuiles
+
 ## Roadmap
 
 - Des bases de données toutes saisons et extensions confondues :

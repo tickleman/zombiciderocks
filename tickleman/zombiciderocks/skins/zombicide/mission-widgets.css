@@ -1,0 +1,17 @@
+.mission.edit.window .multiple .material {
+  background: white;
+  bottom: 0;
+  overflow: scroll;
+  position: fixed;
+  top: 0;
+  z-index: 2; }
+  .mission.edit.window .multiple .material > ul > li > ul {
+    display: block; }
+    .mission.edit.window .multiple .material > ul > li > ul > li {
+      display: inline-block; }
+.mission.edit.window .multiple.tiles, .mission.edit.window .multiple.tokens {
+  border: none; }
+  .mission.edit.window .multiple.tiles > div, .mission.edit.window .multiple.tokens > div {
+    white-space: normal; }
+  .mission.edit.window .multiple.tiles > label, .mission.edit.window .multiple.tokens > label {
+    display: none; }

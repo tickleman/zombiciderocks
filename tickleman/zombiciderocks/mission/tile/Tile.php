@@ -15,6 +15,7 @@ use Tickleman\ZombicideRocks;
  * @link ZombicideRocks\Tile
  * @set Missions_Tiles
  * @sort top, left
+ * @unique left, mission, tile, top
  */
 class Tile extends ZombicideRocks\Tile
 {

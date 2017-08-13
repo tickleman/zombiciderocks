@@ -12,6 +12,7 @@ use Tickleman\ZombicideRocks\Mission;
  * @link ZombicideRocks\Token
  * @set Missions_Tokens
  * @sort top, left
+ * @unique left, mission, token, top
  */
 class Token extends ZombicideRocks\Token
 {

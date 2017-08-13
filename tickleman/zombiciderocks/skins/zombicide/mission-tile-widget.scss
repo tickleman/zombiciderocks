@@ -42,21 +42,11 @@
 		}
 	}
 
-	div.material {
-		background: white;
-		bottom: 0;
-		overflow: scroll;
-		position: fixed;
+	.tiles.material {
 		right: 90px;
-		top: 0;
 
 		> ul > li > ul {
-			display: block;
 			width: 210px;
-
-			> li {
-				display: inline-block;
-			}
 		}
 	}
 }
