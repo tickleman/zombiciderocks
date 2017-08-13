@@ -109,6 +109,23 @@ $(document).ready(function()
 			}
 		};
 
+		//-------------------------------------------------------------------------------------------------------- setValue
+		var setValue = function()
+		{
+			var values = [];
+			$('.multiple.tiles .map tr:not(.more)').each(function() {
+				var row = [];
+				$(this).find('td:not(.more)').each(function() {
+					var $image = $(this).find('img');
+					row.push($image.length ? [$image.data('code'), $image.data('orientation')] : undefined);
+				});
+				values.push(row);
+			});
+			console.log(values);
+			$('input[name=tiles]').attr('value', JSON.stringify(values));
+		};
+		setValue();
+
 		//-------------------------------------------------------------------------------------------- map tile right click
 		/**
 		 * Right click on a tile of the map executes a anti-clockwise 90° rotation
@@ -122,7 +139,8 @@ $(document).ready(function()
 			var rotate  = parseInt($img.attr('src').rParse('?rotate='));
 			rotate      = ((isNaN(rotate) ? 0 : rotate) + 90) % 360;
 			$img.attr('src', $img.attr('src').lParse('?rotate=') + '?rotate=' + rotate);
-			$img.attr('data-rotate', convert[rotate]).data('rotate', convert[rotate]);
+			$img.attr('data-orientation', convert[rotate]).data('orientation', convert[rotate]);
+			setValue();
 			event.preventDefault();
 		});
 
@@ -163,8 +181,9 @@ $(document).ready(function()
 				var src      = $dragged.attr('src').lParse('?');
 				grow($tile);
 				$tile
-					.html('<img data-code="' + code + '" src="' + src + '">')
+					.html('<img data-code="' + code + '" src="' + src + '" data-orientation="north">')
 					.find('img').contextmenu(right_click).draggable(draggable);
+				setValue();
 			}
 		});
 
