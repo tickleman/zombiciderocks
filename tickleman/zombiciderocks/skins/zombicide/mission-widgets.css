@@ -5,6 +5,8 @@
   position: fixed;
   top: 0;
   z-index: 2; }
+  .mission.edit.window .multiple .material h2, .mission.edit.window .multiple .material h3 {
+    text-align: center; }
   .mission.edit.window .multiple .material > ul > li > ul {
     display: block; }
     .mission.edit.window .multiple .material > ul > li > ul > li {

@@ -17,9 +17,12 @@
 		}
 
 		.tokens.material {
-			right: 300px;
+			right: 315px;
+			text-align: center;
 
-			> ul > li > ul {
+			> ul > li > ul > li {
+				display: inline-block;
+				text-align: center;
 				width: 50px;
 			}
 		}
