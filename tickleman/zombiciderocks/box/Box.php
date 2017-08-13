@@ -20,4 +20,11 @@ class Box
 	 */
 	public $tiles;
 
+	//--------------------------------------------------------------------------------------- $tokens
+	/**
+	 * @link Collection
+	 * @var Box\Box_Token[]
+	 */
+	public $tokens;
+
 }

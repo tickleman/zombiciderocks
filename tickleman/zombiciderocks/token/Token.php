@@ -2,7 +2,8 @@
 namespace Tickleman\ZombicideRocks;
 
 use ITRocks\Framework\Dao\File;
-use ITRocks\Framework\Traits\Has_Name;
+use ITRocks\Framework\Objects\Code;
+use Tickleman\ZombicideRocks\Box\Token_Box;
 
 /**
  * Zombicide game token
@@ -12,14 +13,13 @@ use ITRocks\Framework\Traits\Has_Name;
  * @list boxes.name, name, image.name
  * @representative name
  */
-class Token
+class Token extends Code
 {
-	use Has_Name;
 
 	//---------------------------------------------------------------------------------------- $boxes
 	/**
-	 * @link Map
-	 * @var Box[]
+	 * @link Collection
+	 * @var Token_Box[]
 	 */
 	public $boxes;
 
