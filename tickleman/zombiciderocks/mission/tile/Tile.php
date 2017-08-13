@@ -1,10 +1,7 @@
 <?php
 namespace Tickleman\ZombicideRocks\Mission;
 
-use ITRocks\Framework\Dao\File\Session_File\Files;
 use ITRocks\Framework\Mapper\Component;
-use ITRocks\Framework\Session;
-use ITRocks\Framework\Tools\Image;
 use Tickleman\ZombicideRocks\Mission;
 use Tickleman\ZombicideRocks;
 
@@ -20,6 +17,7 @@ use Tickleman\ZombicideRocks;
 class Tile extends ZombicideRocks\Tile
 {
 	use Component;
+	use Has_Image_And_Orientation;
 
 	//----------------------------------------------------------------------------------------- $left
 	/**
@@ -60,21 +58,5 @@ class Tile extends ZombicideRocks\Tile
 	 * @var integer
 	 */
 	public $top = 1;
-
-	//------------------------------------------------------------------------------------------- uri
-	/**
-	 * Generates the tile image with the right orientation, and returns an URI to this image
-	 */
-	public function uri()
-	{
-		$image = Image::createFromFile($this->image);
-		/** @var $session_files Files */
-		$session_files = Session::current()->get(Files::class, true);
-		$uri           = $session_files->addAndGetLink($image->asFile($this->image->name));
-		if ($this->orientation !== Orientation::NORTH) {
-			$uri .= '?rotate=' . Orientation::angle($this->orientation);
-		}
-		return $uri;
-	}
 
 }

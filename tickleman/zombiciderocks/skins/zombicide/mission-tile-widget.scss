@@ -1,5 +1,4 @@
 .mission.edit.window .multiple.tiles {
-	text-align: center;
 
 	img {
 		cursor: pointer;
@@ -10,7 +9,6 @@
 	}
 
 	table.map {
-		display: inline-table;
 
 		tr {
 
@@ -35,7 +33,7 @@
 					}
 
 					&.left, &.right {
-						width: 32px;
+						min-width: 32px;
 					}
 				}
 			}

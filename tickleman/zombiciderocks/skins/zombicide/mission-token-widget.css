@@ -1,4 +1,11 @@
-.mission.edit.window .multiple.tokens .tokens.material {
-  right: 300px; }
-  .mission.edit.window .multiple.tokens .tokens.material > ul > li > ul {
-    width: 50px; }
+.mission.edit.window #tab_map {
+  position: relative; }
+.mission.edit.window .multiple.tokens {
+  position: absolute;
+  top: 0; }
+  .mission.edit.window .multiple.tokens ul.tokens > li {
+    position: absolute; }
+  .mission.edit.window .multiple.tokens .tokens.material {
+    right: 300px; }
+    .mission.edit.window .multiple.tokens .tokens.material > ul > li > ul {
+      width: 50px; }

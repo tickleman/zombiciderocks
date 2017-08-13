@@ -17,6 +17,7 @@ use Tickleman\ZombicideRocks\Mission;
 class Token extends ZombicideRocks\Token
 {
 	use Component;
+	use Has_Image_And_Orientation;
 
 	//----------------------------------------------------------------------------------------- $left
 	/**

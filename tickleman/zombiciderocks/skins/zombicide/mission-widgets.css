@@ -12,6 +12,7 @@
 .mission.edit.window .multiple.tiles, .mission.edit.window .multiple.tokens {
   border: none; }
   .mission.edit.window .multiple.tiles > div, .mission.edit.window .multiple.tokens > div {
+    padding: 0;
     white-space: normal; }
   .mission.edit.window .multiple.tiles > label, .mission.edit.window .multiple.tokens > label {
     display: none; }

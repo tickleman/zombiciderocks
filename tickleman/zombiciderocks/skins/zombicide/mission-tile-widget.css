@@ -1,26 +1,22 @@
-.mission.edit.window .multiple.tiles {
-  text-align: center; }
-  .mission.edit.window .multiple.tiles img {
-    cursor: pointer; }
-    .mission.edit.window .multiple.tiles img.ui-draggable-dragging {
-      opacity: .5; }
-  .mission.edit.window .multiple.tiles table.map {
-    display: inline-table; }
-    .mission.edit.window .multiple.tiles table.map tr:hover {
-      background-color: inherit; }
-    .mission.edit.window .multiple.tiles table.map tr td {
-      color: transparent;
-      font-size: 1px;
-      padding: 0; }
-      .mission.edit.window .multiple.tiles table.map tr td.ui-droppable-hover {
-        filter: brightness(110%); }
-      .mission.edit.window .multiple.tiles table.map tr td.more {
-        background-color: lightgray; }
-        .mission.edit.window .multiple.tiles table.map tr td.more.bottom, .mission.edit.window .multiple.tiles table.map tr td.more.top {
-          height: 32px; }
-        .mission.edit.window .multiple.tiles table.map tr td.more.left, .mission.edit.window .multiple.tiles table.map tr td.more.right {
-          width: 32px; }
-  .mission.edit.window .multiple.tiles .tiles.material {
-    right: 90px; }
-    .mission.edit.window .multiple.tiles .tiles.material > ul > li > ul {
-      width: 210px; }
+.mission.edit.window .multiple.tiles img {
+  cursor: pointer; }
+  .mission.edit.window .multiple.tiles img.ui-draggable-dragging {
+    opacity: .5; }
+.mission.edit.window .multiple.tiles table.map tr:hover {
+  background-color: inherit; }
+.mission.edit.window .multiple.tiles table.map tr td {
+  color: transparent;
+  font-size: 1px;
+  padding: 0; }
+  .mission.edit.window .multiple.tiles table.map tr td.ui-droppable-hover {
+    filter: brightness(110%); }
+  .mission.edit.window .multiple.tiles table.map tr td.more {
+    background-color: lightgray; }
+    .mission.edit.window .multiple.tiles table.map tr td.more.bottom, .mission.edit.window .multiple.tiles table.map tr td.more.top {
+      height: 32px; }
+    .mission.edit.window .multiple.tiles table.map tr td.more.left, .mission.edit.window .multiple.tiles table.map tr td.more.right {
+      min-width: 32px; }
+.mission.edit.window .multiple.tiles .tiles.material {
+  right: 90px; }
+  .mission.edit.window .multiple.tiles .tiles.material > ul > li > ul {
+    width: 210px; }

@@ -1,10 +1,26 @@
-.mission.edit.window .multiple.tokens {
+.mission.edit.window {
 
-	.tokens.material {
-		right: 300px;
+	#tab_map {
+		position: relative;
+	}
 
-		> ul > li > ul {
-			width: 50px;
+	.multiple.tokens {
+		position: absolute;
+		top: 0;
+
+		ul.tokens {
+
+			> li {
+				position: absolute;
+			}
+		}
+
+		.tokens.material {
+			right: 300px;
+
+			> ul > li > ul {
+				width: 50px;
+			}
 		}
 	}
 }
