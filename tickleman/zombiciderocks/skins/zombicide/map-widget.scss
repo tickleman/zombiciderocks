@@ -1,14 +1,12 @@
 .mission.edit.window .multiple.tiles {
 	text-align: center;
 
+	img {
+		cursor: pointer;
+	}
+
 	table.map {
 		display: inline-table;
-
-		td.more {
-			background-color: lightgray;
-			color: transparent;
-			font-size: 1px;
-		}
 
 		tr {
 
@@ -16,22 +14,21 @@
 				background-color: inherit;
 			}
 
-			&.more {
-				height: 32px;
-
-				&.top {
-					caption-side: top;
-				}
-			}
-
 			td {
+				color: transparent;
+				font-size: 1px;
+				padding: 0;
 
 				&.more {
-					width: 32px;
-				}
+					background-color: lightgray;
 
-				img {
-					cursor: pointer;
+					&.bottom, &.top {
+						height: 32px;
+					}
+
+					&.left, &.right {
+						width: 32px;
+					}
 				}
 			}
 		}
@@ -51,10 +48,6 @@
 
 			> li {
 				display: inline-block;
-
-				> img {
-					cursor: pointer;
-				}
 			}
 		}
 	}
