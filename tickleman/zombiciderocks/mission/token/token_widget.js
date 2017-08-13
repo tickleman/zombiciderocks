@@ -29,7 +29,7 @@ $(document).ready(function()
 		 *
 		 * @param event
 		 */
-		this.inside('.multiple.tokens img').contextmenu(right_click = function(event)
+		this.inside('.multiple.tokens .tokens:not(.material) img').contextmenu(right_click = function(event)
 		{
 			var $img    = $(this);
 			var convert = { 0: 'north', 90: 'west', 180: 'south', 270: 'east' };
@@ -45,9 +45,10 @@ $(document).ready(function()
 		/**
 		 * Tokens on the map and the material tokens list are draggable : works at an image level
 		 */
-		this.inside('.tokens.material img, .multiple.tokens img').draggable(draggable = {
+		this.inside('.multiple.tokens img').draggable(draggable = {
 			appendTo: this.inside('.map'),
 			classes:  { 'ui-draggable-handle': 'token' },
+			grid:     [5, 5],
 			helper:   'clone',
 			zIndex:   3
 		});
@@ -64,7 +65,7 @@ $(document).ready(function()
 			{
 				var $draggable = ui.draggable;
 				var $dragged   = ui.helper;
-				var $tokens    = $('.tokens.multiple ul.tokens');
+				var $tokens    = $('.multiple.tokens ul.tokens');
 
 				var position = $dragged.position();
 				var code     = $draggable.parent().data('code');

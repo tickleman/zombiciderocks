@@ -13,6 +13,7 @@ use Tickleman\ZombicideRocks\Tile\Tag;
  * @display_order box, code, image, tags
  * @list box.name, code, image.name
  * @representative code
+ * @sort box.name, code
  */
 class Tile
 {

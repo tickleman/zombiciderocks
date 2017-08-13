@@ -10,6 +10,7 @@ use Tickleman\ZombicideRocks;
  *
  * @display_order box, token, count
  * @set Boxes_Tokens
+ * @sort box.name, token.code, token.name
  */
 trait Token
 {

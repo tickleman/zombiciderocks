@@ -9,8 +9,6 @@
     text-align: center; }
   .mission.edit.window .multiple .material > ul > li > ul {
     display: block; }
-    .mission.edit.window .multiple .material > ul > li > ul > li {
-      display: inline-block; }
 .mission.edit.window .multiple.tiles, .mission.edit.window .multiple.tokens {
   border: none; }
   .mission.edit.window .multiple.tiles > div, .mission.edit.window .multiple.tokens > div {

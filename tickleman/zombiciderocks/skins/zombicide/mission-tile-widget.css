@@ -13,10 +13,12 @@
   .mission.edit.window .multiple.tiles table.map tr td.more {
     background-color: lightgray; }
     .mission.edit.window .multiple.tiles table.map tr td.more.bottom, .mission.edit.window .multiple.tiles table.map tr td.more.top {
-      height: 32px; }
+      height: 50px; }
     .mission.edit.window .multiple.tiles table.map tr td.more.left, .mission.edit.window .multiple.tiles table.map tr td.more.right {
-      min-width: 32px; }
+      min-width: 50px; }
 .mission.edit.window .multiple.tiles .tiles.material {
   right: 90px; }
   .mission.edit.window .multiple.tiles .tiles.material > ul > li > ul {
     width: 210px; }
+    .mission.edit.window .multiple.tiles .tiles.material > ul > li > ul > li {
+      display: inline-block; }
