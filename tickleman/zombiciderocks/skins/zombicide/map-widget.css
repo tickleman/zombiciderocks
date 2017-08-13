@@ -2,6 +2,8 @@
   text-align: center; }
   .mission.edit.window .multiple.tiles img {
     cursor: pointer; }
+    .mission.edit.window .multiple.tiles img.ui-draggable-dragging {
+      opacity: .5; }
   .mission.edit.window .multiple.tiles table.map {
     display: inline-table; }
     .mission.edit.window .multiple.tiles table.map tr:hover {
@@ -10,6 +12,8 @@
       color: transparent;
       font-size: 1px;
       padding: 0; }
+      .mission.edit.window .multiple.tiles table.map tr td.ui-droppable-hover {
+        filter: brightness(110%); }
       .mission.edit.window .multiple.tiles table.map tr td.more {
         background-color: lightgray; }
         .mission.edit.window .multiple.tiles table.map tr td.more.bottom, .mission.edit.window .multiple.tiles table.map tr td.more.top {

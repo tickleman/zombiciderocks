@@ -3,6 +3,10 @@
 
 	img {
 		cursor: pointer;
+
+		&.ui-draggable-dragging {
+			opacity: .5;
+		}
 	}
 
 	table.map {
@@ -18,6 +22,10 @@
 				color: transparent;
 				font-size: 1px;
 				padding: 0;
+
+				&.ui-droppable-hover {
+					filter: brightness(110%);
+				}
 
 				&.more {
 					background-color: lightgray;
