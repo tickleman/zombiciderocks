@@ -63,7 +63,7 @@ class Widget extends Property
 			$token->orientation = $orientation;
 			$token->token       = Dao::searchOne(['code' => $code], ZombicideRocks\Token::class);
 			$token->top         = $top;
-			$tokens[]           = $tokens;
+			$tokens[]           = $token;
 		}
 		return $tokens;
 	}

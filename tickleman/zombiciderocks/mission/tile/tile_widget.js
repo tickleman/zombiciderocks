@@ -148,21 +148,10 @@ $(document).ready(function()
 		 * Tiles on the map and the material tiles list are draggable : works at an image level
 		 */
 		this.inside('.tiles.material img, .multiple.tiles .map img').draggable(draggable = {
-			revert: true,
-			revertDuration: 0,
-			zIndex: 1,
-
-			start: function()
-			{
-				$(this).prop('id', 'mission-dragged-tile');
-				$('.tiles.material').css('overflow', 'inherit');
-			},
-
-			stop: function()
-			{
-				$(this).prop('id', '');
-				$('.tiles.material').css('overflow', 'scroll');
-			}
+			appendTo: this.inside('.map'),
+			classes:  { 'ui-draggable-handle': 'tile' },
+			helper:   'clone',
+			zIndex:   3
 		});
 
 		//--------------------------------------------------------------------------------------------- droppable map tiles
@@ -170,18 +159,21 @@ $(document).ready(function()
 		 * Map tiles are droppable : works at a table-cell level : for already-tiled cells, and ready-for-new-tile cells
 		 */
 		this.inside('.multiple.tiles .map td').droppable(droppable = {
-			accept: '#mission-dragged-tile',
+			accept: 'img.tile',
 
 			drop: function(event, ui)
 			{
 				var $dragged = ui.draggable;
 				var $tile    = $(this);
-				var code     = $dragged.attr('src').lParse(DOT).rLastParse(SL).toLowerCase();
-				var src      = $dragged.attr('src').lParse('?');
 				grow($tile);
+
+				var code = $dragged.parent().data('code');
+				var src  = $dragged.attr('src').lParse('?');
+
 				$tile
 					.html('<img data-code="' + code + '" src="' + src + '" data-orientation="north">')
 					.find('img').contextmenu(right_click).draggable(draggable);
+
 				setValue();
 			}
 		});

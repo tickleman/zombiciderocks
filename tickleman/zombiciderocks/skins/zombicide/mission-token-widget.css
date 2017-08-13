@@ -4,6 +4,7 @@
   position: absolute;
   top: 0; }
   .mission.edit.window .multiple.tokens ul.tokens > li {
+    display: inline-block;
     position: absolute; }
   .mission.edit.window .multiple.tokens .tokens.material {
     right: 300px; }
