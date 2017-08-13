@@ -56,7 +56,7 @@
     padding-left: 16px; }
     .mission.output > .objectives > ul > li, .mission.output .special.rules > ul > li {
       margin: 1em 0; }
-      .mission.output > .objectives > ul > li > *, .mission.output .special.rules > ul > li > * {
+      .mission.output > .objectives > ul > li > p, .mission.output .special.rules > ul > li > p {
         display: inline-block; }
       .mission.output > .objectives > ul > li > h4:not(:empty):after, .mission.output .special.rules > ul > li > h4:not(:empty):after {
         content: '. '; }
