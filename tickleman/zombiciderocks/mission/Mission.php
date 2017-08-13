@@ -96,7 +96,7 @@ class Mission
 	/**
 	 * @link Collection
 	 * @var Mission\Tile[]
-	 * @widget Mission\Tile\Map_Widget
+	 * @widget Mission\Tile\Widget
 	 */
 	public $tiles;
 
@@ -119,6 +119,7 @@ class Mission
 	/**
 	 * @link Collection
 	 * @var Mission\Token[]
+	 * @widget Mission\Token\Widget
 	 */
 	public $tokens;
 
@@ -136,6 +137,17 @@ class Mission
 	public function __toString()
 	{
 		return trim(strval($this->code) . SP . strval($this->title));
+	}
+
+	//------------------------------------------------------------------------------------- tileCodes
+	/**
+	 * Returns the list of tile codes, sorted
+	 */
+	public function tileCodes()
+	{
+		$tile_codes = array_map(function(Tile $tile) { return $tile->code; }, $this->tiles);
+		sort($tile_codes);
+		return $tile_codes;
 	}
 
 	//------------------------------------------------------------------------------------ tilesImage
