@@ -154,6 +154,13 @@ class Grid
 						}
 					}
 				}
+				foreach ($this->mission->tokens as $token) {
+					$token_image = Image::createFromFile($token->image);
+					if ($token->orientation !== Orientation::NORTH) {
+						$token_image = $token_image->rotate(Orientation::angle($token->orientation));
+					}
+					$image->paste($token_image, $token->left, $token->top);
+				}
 				return $image;
 			}
 		}
