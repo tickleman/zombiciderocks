@@ -59,4 +59,26 @@ class Token extends ZombicideRocks\Token
 	 */
 	public $top = 0;
 
+	//---------------------------------------------------------------------------------------- left50
+	/**
+	 * Gets left plus a 50 pixels margin
+	 *
+	 * @return integer
+	 */
+	public function left50()
+	{
+		return $this->left + 50;
+	}
+
+	//----------------------------------------------------------------------------------------- top50
+	/**
+	 * Gets left plus a 50 pixels margin
+	 *
+	 * @return integer
+	 */
+	public function top50()
+	{
+		return $this->top + 50;
+	}
+
 }

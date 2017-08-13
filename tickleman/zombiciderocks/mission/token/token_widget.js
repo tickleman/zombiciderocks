@@ -14,8 +14,8 @@ $(document).ready(function()
 				var $image = $li.find('img');
 				values.push([
 					$image.data('code'),
-					parseInt($li.css('left')),
-					parseInt($li.css('top')),
+					parseInt($li.css('left')) - 50,
+					parseInt($li.css('top')) - 50,
 					$image.data('orientation')
 				]);
 			});
