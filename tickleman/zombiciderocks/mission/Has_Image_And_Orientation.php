@@ -24,7 +24,7 @@ trait Has_Image_And_Orientation
 		$image = Image::createFromFile($this->image);
 		/** @var $session_files Files */
 		$session_files = Session::current()->get(Files::class, true);
-		$uri           = $session_files->addAndGetLink($image->asFile($this->image->name));
+		$uri = $session_files->addAndGetLink($image->asFile(uniqid() . DOT . rLastParse($this->image->name, DOT)));
 		if ($this->orientation !== Orientation::NORTH) {
 			$uri .= '?rotate=' . Orientation::angle($this->orientation);
 		}
