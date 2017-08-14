@@ -1,3 +1,10 @@
+.mission.edit.window .multiple.tiles, .mission.edit.window .multiple.tokens {
+  border: none; }
+  .mission.edit.window .multiple.tiles > div, .mission.edit.window .multiple.tokens > div {
+    padding: 0;
+    white-space: normal; }
+  .mission.edit.window .multiple.tiles > label, .mission.edit.window .multiple.tokens > label {
+    display: none; }
 .mission.edit.window .multiple .material {
   background: white;
   bottom: 0;
@@ -9,10 +16,3 @@
     text-align: center; }
   .mission.edit.window .multiple .material > ul > li > ul {
     display: block; }
-.mission.edit.window .multiple.tiles, .mission.edit.window .multiple.tokens {
-  border: none; }
-  .mission.edit.window .multiple.tiles > div, .mission.edit.window .multiple.tokens > div {
-    padding: 0;
-    white-space: normal; }
-  .mission.edit.window .multiple.tiles > label, .mission.edit.window .multiple.tokens > label {
-    display: none; }

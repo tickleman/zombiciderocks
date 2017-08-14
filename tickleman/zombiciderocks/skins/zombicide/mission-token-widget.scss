@@ -8,12 +8,9 @@
 		position: absolute;
 		top: 0;
 
-		ul.tokens {
-
-			> li {
-				display: inline-block;
-				position: absolute;
-			}
+		.mission.tokens > li {
+			display: inline-block;
+			position: absolute;
 		}
 
 		.tokens.material {

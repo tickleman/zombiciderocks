@@ -9,7 +9,7 @@ $(document).ready(function()
 		var setValue = function()
 		{
 			var values = [];
-			$('.multiple.tokens .tokens:not(.material) li').each(function() {
+			$('.mission.tokens li').each(function() {
 				var $li    = $(this);
 				var $image = $li.find('img');
 				values.push([
@@ -29,7 +29,7 @@ $(document).ready(function()
 		 *
 		 * @param event
 		 */
-		this.inside('.multiple.tokens .tokens:not(.material) img').contextmenu(right_click = function(event)
+		this.inside('.mission.tokens img').contextmenu(right_click = function(event)
 		{
 			var $img    = $(this);
 			var convert = { 0: 'north', 90: 'west', 180: 'south', 270: 'east' };
@@ -45,8 +45,8 @@ $(document).ready(function()
 		/**
 		 * Tokens on the map and the material tokens list are draggable : works at an image level
 		 */
-		this.inside('.multiple.tokens img').draggable(draggable = {
-			appendTo: this.inside('.map'),
+		this.inside('.mission.tokens img, .tokens.material img').draggable(draggable = {
+			appendTo: this.inside('.mission.tiles'),
 			classes:  { 'ui-draggable-handle': 'token' },
 			grid:     [5, 5],
 			helper:   'clone',
@@ -57,7 +57,7 @@ $(document).ready(function()
 		/**
 		 * Map tokens are droppable : works at a ul>li level
 		 */
-		this.inside('.map').droppable({
+		this.inside('.mission.tiles').droppable({
 			accept:    'img.token',
 			tolerance: 'fit',
 
@@ -65,7 +65,7 @@ $(document).ready(function()
 			{
 				var $draggable = ui.draggable;
 				var $dragged   = ui.helper;
-				var $tokens    = $('.multiple.tokens ul.tokens');
+				var $tokens    = $('.mission.tokens');
 
 				var position = $dragged.position();
 				var code     = $draggable.parent().data('code');

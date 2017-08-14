@@ -113,7 +113,7 @@ $(document).ready(function()
 		var setValue = function()
 		{
 			var values = [];
-			$('.multiple.tiles .map tr:not(.more)').each(function() {
+			$('.mission.tiles tr:not(.more)').each(function() {
 				var row = [];
 				$(this).find('td:not(.more)').each(function() {
 					var $image = $(this).find('img');
@@ -131,7 +131,7 @@ $(document).ready(function()
 		 *
 		 * @param event
 		 */
-		this.inside('.multiple.tiles .map img').contextmenu(right_click = function(event)
+		this.inside('.mission.tiles img').contextmenu(right_click = function(event)
 		{
 			var $img    = $(this);
 			var convert = { 0: 'north', 90: 'west', 180: 'south', 270: 'east' };
@@ -147,8 +147,8 @@ $(document).ready(function()
 		/**
 		 * Tiles on the map and the material tiles list are draggable : works at an image level
 		 */
-		this.inside('.tiles.material img, .multiple.tiles .map img').draggable(draggable = {
-			appendTo: this.inside('.map'),
+		this.inside('.mission.tiles img, .tiles.material img').draggable(draggable = {
+			appendTo: this.inside('.mission.tiles'),
 			classes:  { 'ui-draggable-handle': 'tile' },
 			helper:   'clone',
 			zIndex:   3
@@ -158,7 +158,7 @@ $(document).ready(function()
 		/**
 		 * Map tiles are droppable : works at a table-cell level : for already-tiled cells, and ready-for-new-tile cells
 		 */
-		this.inside('.multiple.tiles .map td').droppable(droppable = {
+		this.inside('.mission.tiles td').droppable(droppable = {
 			accept: 'img.tile',
 
 			drop: function(event, ui)

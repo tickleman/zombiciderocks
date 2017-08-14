@@ -1,5 +1,18 @@
 .mission.edit.window .multiple {
 
+	&.tiles, &.tokens {
+		border: none;
+
+		> div {
+			padding: 0;
+			white-space: normal;
+		}
+
+		> label {
+			display: none;
+		}
+	}
+
 	.material {
 		background: white;
 		bottom: 0;
@@ -14,19 +27,6 @@
 
 		> ul > li > ul {
 			display: block;
-		}
-	}
-
-	&.tiles, &.tokens {
-		border: none;
-
-		> div {
-			padding: 0;
-			white-space: normal;
-		}
-
-		> label {
-			display: none;
 		}
 	}
 }
