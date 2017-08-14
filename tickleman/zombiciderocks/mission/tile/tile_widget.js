@@ -5,6 +5,7 @@ $(document).ready(function()
 		var draggable;
 		var droppable;
 		var right_click;
+		var shift_click;
 
 		//------------------------------------------------------------------------------------------------------ map growth
 		/**
@@ -109,6 +110,42 @@ $(document).ready(function()
 			}
 		};
 
+		//---------------------------------------------------------------------------------------------------------- reduce
+		/**
+		 * @param $tile jquery A jquery object matching a <td> element representing a tile into the map
+		 */
+		var reduce = function($tile)
+		{
+			reduceColumn($tile);
+			reduceRow($tile);
+		};
+
+		//---------------------------------------------------------------------------------------------------- reduceColumn
+		/**
+		 * @param $tile jquery A jquery object matching a <td> element representing a tile into the map
+		 */
+		var reduceColumn = function($tile)
+		{
+			var previous_count = $tile.prevAll('td').length + 1;
+			var td_selector    = 'td:nth-child(' + previous_count + ')';
+			var $table         = $tile.closest('table');
+			if (!$table.find(td_selector + ' img').length) {
+				$table.find(td_selector).remove();
+			}
+		};
+
+		//------------------------------------------------------------------------------------------------------- reduceRow
+		/**
+		 * @param $tile jquery A jquery object matching a <td> element representing a tile into the map
+		 */
+		var reduceRow = function($tile)
+		{
+			var $tr = $tile.closest('tr');
+			if (!$tr.find('img').length) {
+				$tr.remove();
+			}
+		};
+
 		//-------------------------------------------------------------------------------------------------------- setValue
 		var setValue = function()
 		{
@@ -124,6 +161,22 @@ $(document).ready(function()
 			$('input[name=tiles]').attr('value', JSON.stringify(values));
 		};
 		setValue();
+
+		//-------------------------------------------------------------------------------------------- map tile shift click
+		/**
+		 * Shift-click a tile to remove a it from the map
+		 *
+		 * When no tile anymore on the line / row : remove it
+		 */
+		this.inside('.mission.tiles img').click(shift_click = function(event)
+		{
+			if (event.shiftKey) {
+				var $tile = $(this).parent();
+				$tile.html('&nbsp;');
+				reduce($tile);
+				setValue();
+			}
+		});
 
 		//-------------------------------------------------------------------------------------------- map tile right click
 		/**
@@ -175,7 +228,7 @@ $(document).ready(function()
 
 				$tile
 					.html('<img data-code="' + code + '" src="' + src + '" data-orientation="north">')
-					.find('img').contextmenu(right_click).draggable(draggable);
+					.find('img').click(shift_click).contextmenu(right_click).draggable(draggable);
 
 				setValue();
 			}

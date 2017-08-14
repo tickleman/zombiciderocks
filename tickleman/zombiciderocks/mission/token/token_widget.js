@@ -4,6 +4,7 @@ $(document).ready(function()
 	{
 		var draggable;
 		var right_click;
+		var shift_click;
 
 		//-------------------------------------------------------------------------------------------------------- setValue
 		var setValue = function()
@@ -22,6 +23,18 @@ $(document).ready(function()
 			$('input[name=tokens]').attr('value', JSON.stringify(values));
 		};
 		setValue();
+
+		//------------------------------------------------------------------------------------------- map token shift click
+		/**
+		 * Shift-click a token to remove it from the map
+		 */
+		this.inside('.mission.tokens img').click(shift_click = function(event)
+		{
+			if (event.shiftKey) {
+				$(this).parent().remove();
+				setValue();
+			}
+		});
 
 		//------------------------------------------------------------------------------------------- map token right click
 		/**
@@ -82,7 +95,7 @@ $(document).ready(function()
 						+ '</li>'
 					);
 					$tokens.append($li);
-					$li.find('img').contextmenu(right_click).draggable(draggable);
+					$li.find('img').click(shift_click).contextmenu(right_click).draggable(draggable);
 				}
 				// move
 				else {
