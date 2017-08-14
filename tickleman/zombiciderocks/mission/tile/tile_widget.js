@@ -168,7 +168,10 @@ $(document).ready(function()
 				grow($tile);
 
 				var code = $dragged.parent().data('code');
-				var src  = $dragged.attr('src').lParse('?');
+				if (code === undefined) {
+					code = $dragged.data('code');
+				}
+				var src = $dragged.attr('src').lParse('?');
 
 				$tile
 					.html('<img data-code="' + code + '" src="' + src + '" data-orientation="north">')
