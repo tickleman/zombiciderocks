@@ -5,6 +5,14 @@
     white-space: normal; }
   .mission.edit.window .multiple.tiles > label, .mission.edit.window .multiple.tokens > label {
     display: none; }
+.mission.edit.window .multiple .map.editor.instructions {
+  margin-top: 1em; }
+  .mission.edit.window .multiple .map.editor.instructions h3 {
+    margin-bottom: .5em; }
+    .mission.edit.window .multiple .map.editor.instructions h3:after {
+      content: ' :'; }
+  .mission.edit.window .multiple .map.editor.instructions ul {
+    margin-left: 1.5em; }
 .mission.edit.window .multiple .material {
   background: white;
   bottom: 0;
