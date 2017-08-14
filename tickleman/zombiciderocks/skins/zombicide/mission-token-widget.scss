@@ -11,6 +11,10 @@
 		.mission.tokens > li {
 			display: inline-block;
 			position: absolute;
+
+			> a {
+				display: inline-block;
+			}
 		}
 
 		.tokens.material {

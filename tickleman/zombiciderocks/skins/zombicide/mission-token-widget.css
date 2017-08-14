@@ -6,6 +6,8 @@
   .mission.edit.window .multiple.tokens .mission.tokens > li {
     display: inline-block;
     position: absolute; }
+    .mission.edit.window .multiple.tokens .mission.tokens > li > a {
+      display: inline-block; }
   .mission.edit.window .multiple.tokens .tokens.material {
     right: 315px; }
     .mission.edit.window .multiple.tokens .tokens.material > ul > li > ul > li {

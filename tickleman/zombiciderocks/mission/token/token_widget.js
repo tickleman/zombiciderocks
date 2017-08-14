@@ -2,6 +2,8 @@ $(document).ready(function()
 {
 	$('.mission.edit.window').build(function ()
 	{
+		var directional_keys;
+		var disable_anchor;
 		var draggable;
 		var right_click;
 		var shift_click;
@@ -16,7 +18,7 @@ $(document).ready(function()
 				values.push([
 					$image.data('code'),
 					parseInt($li.css('left')) - 50,
-					parseInt($li.css('top')) - 50,
+					parseInt($li.css('top'))  - 50,
 					$image.data('orientation')
 				]);
 			});
@@ -31,7 +33,7 @@ $(document).ready(function()
 		this.inside('.mission.tokens img').click(shift_click = function(event)
 		{
 			if (event.shiftKey) {
-				$(this).parent().remove();
+				$(this).closest('li').remove();
 				setValue();
 			}
 		});
@@ -66,6 +68,27 @@ $(document).ready(function()
 			zIndex:   3
 		});
 
+		//--------------------------------------------------------------------------------------- map token disable anchors
+		this.inside('.mission.tokens a').click(disable_anchor = function(event)
+		{
+			$(this).focus();
+			event.preventDefault();
+		});
+
+		//-------------------------------------------------------------------------------------- map token directional keys
+		this.inside('.mission.tokens a').keydown(directional_keys = function(event)
+		{
+			var $tile = $(this).closest('li');
+			switch (event.keyCode) {
+				case 37: $tile.css('left', (parseInt($tile.css('left')) - 1) + 'px'); break; // left
+				case 38: $tile.css('top',  (parseInt($tile.css('top' )) - 1) + 'px'); break; // up
+				case 39: $tile.css('left', (parseInt($tile.css('left')) + 1) + 'px'); break; // right
+				case 40: $tile.css('top',  (parseInt($tile.css('top' )) + 1) + 'px'); break; // down
+			}
+			setValue();
+			event.preventDefault();
+		});
+
 		//-------------------------------------------------------------------------------------------- droppable map tokens
 		/**
 		 * Map tokens are droppable : works at a ul>li level
@@ -91,15 +114,16 @@ $(document).ready(function()
 				if ($draggable.closest('.tokens.material').length) {
 					$li = $(
 						'<li>'
-						+ '<img data-code="' + code + '" src="' + src + '" data-orientation="north">'
+						+ '<a><img data-code="' + code + '" src="' + src + '" data-orientation="north"></a>'
 						+ '</li>'
 					);
 					$tokens.append($li);
 					$li.find('img').click(shift_click).contextmenu(right_click).draggable(draggable);
+					$li.find('a').click(disable_anchor).keydown(directional_keys);
 				}
 				// move
 				else {
-					$li = $draggable.parent();
+					$li = $draggable.closest('li');
 				}
 				$li.css({ left: left + 'px', top: top + 'px' });
 
