@@ -21,6 +21,7 @@ $config['Tickleman/ZombicideRocks'] = [
 
 	//------------------------------------------------------------------------------ Priority::NORMAL
 	Priority::NORMAL => [
+		Application\Routes::class,
 		Locale::class => [
 			Locale::DATE     => 'd/m/Y',
 			Locale::LANGUAGE => Language::FR,
