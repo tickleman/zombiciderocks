@@ -1,6 +1,7 @@
 <?php
 namespace Tickleman\ZombicideRocks;
 
+use /** @noinspection PhpUnusedAliasInspection $url @widget */ Tickleman\ZombicideRocks\Link\Url;
 /**
  * Stores a link
  *
@@ -29,6 +30,7 @@ class Link
 	//------------------------------------------------------------------------------------------ $url
 	/**
 	 * @var string
+	 * @widget Url
 	 */
 	public $url;
 
