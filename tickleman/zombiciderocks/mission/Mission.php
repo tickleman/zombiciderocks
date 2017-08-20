@@ -52,6 +52,7 @@ class Mission
 	//------------------------------------------------------------------------------ $equipment_cards
 	/**
 	 * @link Map
+	 * @user invisible
 	 * @var Card\Equipment[]
 	 */
 	public $equipment_cards;
@@ -126,6 +127,7 @@ class Mission
 	//--------------------------------------------------------------------------------- $zombie_cards
 	/**
 	 * @link Map
+	 * @user invisible
 	 * @var Card\Zombie[]
 	 */
 	public $zombie_cards;
