@@ -3,15 +3,15 @@ namespace Tickleman\ZombicideRocks\Blog;
 
 use ITRocks\Framework\Locale\Loc;
 use ITRocks\Framework\Tools\Date_Time;
-use ITRocks\Framework\User;
+use Tickleman\ZombicideRocks\Member;
 use Tickleman\ZombicideRocks\Mission;
 
 /**
  * Zombicide missions blog entry
  *
- * @display_order title, mission, date, user, players_count, survivors_count, duration
- * @list date, title, user.login, mission.title
- * @representative user.login, title
+ * @display_order title, mission, date, member, players_count, survivors_count, duration
+ * @list date, title, member.login, mission.title
+ * @representative member.login, title
  * @set Blog_Entries
  * @sort -date, title
  */
@@ -40,6 +40,14 @@ class Entry
 	 * @var Image[]
 	 */
 	public $images;
+
+	//--------------------------------------------------------------------------------------- $member
+	/**
+	 * @link Object
+	 * @mandatory
+	 * @var Member
+	 */
+	public $member;
 
 	//-------------------------------------------------------------------------------------- $mission
 	/**
@@ -79,14 +87,6 @@ class Entry
 	 * @var string
 	 */
 	public $title;
-
-	//----------------------------------------------------------------------------------------- $user
-	/**
-	 * @link Object
-	 * @mandatory
-	 * @var User
-	 */
-	public $user;
 
 	//------------------------------------------------------------------------------------ __toString
 	/**

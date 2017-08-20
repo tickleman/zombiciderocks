@@ -1,12 +1,14 @@
 <?php
 namespace Tickleman\ZombicideRocks;
 
+use ITRocks\Framework\Builder;
 use ITRocks\Framework\Configuration;
 use ITRocks\Framework\Dao\Mysql\File_Logger;
 use ITRocks\Framework\Locale;
 use ITRocks\Framework\Locale\Language;
 use ITRocks\Framework\Locale\Number_Format;
 use ITRocks\Framework\Plugin\Priority;
+use ITRocks\Framework\User;
 use ITRocks\Framework\View;
 use ITRocks\Framework\Widget\Menu;
 
@@ -18,6 +20,13 @@ $config['Tickleman/ZombicideRocks'] = [
 	Configuration::APP         => Application::class,
 	Configuration::ENVIRONMENT => $loc[Configuration::ENVIRONMENT],
 	Configuration::EXTENDS_APP => 'ITRocks/Framework',
+
+	//-------------------------------------------------------------------------------- Priority::ROOT
+	Priority::CORE => [
+		Builder::class => [
+			User::class => Member::class
+		]
+	],
 
 	//------------------------------------------------------------------------------ Priority::NORMAL
 	Priority::NORMAL => [
