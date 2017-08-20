@@ -15,6 +15,9 @@ class Routes implements Registerable
 
 	//---------------------------------------------------------------------------------------- ROUTES
 	const ROUTES = [
+		'/ITRocks/Framework/User/(.*)'                      => '/member/$1',
+		'/ITRocks/Framework/Users'                          => '/members',
+		'/ITRocks/Framework/Users/dataList(.*)'             => '/members$1',
 		// Entry before Entries, because conflict of naming of blog (same for singular en plural)
 		'/Tickleman/ZombicideRocks/Blog/Entry/(.*)'                => '/blog/$1',
 		'/Tickleman/ZombicideRocks/Blog/Blog_Entries/dataList(.*)' => '/blog$1',
@@ -49,7 +52,7 @@ class Routes implements Registerable
 		'/Tickleman/ZombicideRocks/Links/dataList(.*)'             => '/links$1',
 		'/Tickleman/ZombicideRocks/Member/(.*)'                    => '/member/$1',
 		'/Tickleman/ZombicideRocks/Members'                        => '/members',
-		'/Tickleman/ZombicideRocks/Members/dataList(.*)'           => '/members$1',
+		'/Tickleman/ZombicideRocks/Members/dataList(.*)'           => '/members$1'
 	];
 
 	//----------------------------------------------------------------------------------- linkToRoute
