@@ -2,6 +2,7 @@
 namespace Tickleman\ZombicideRocks;
 
 use /** @noinspection PhpUnusedAliasInspection $url @widget */ Tickleman\ZombicideRocks\Link\Url;
+
 /**
  * Stores a link
  *

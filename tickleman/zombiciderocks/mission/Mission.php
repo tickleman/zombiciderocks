@@ -4,6 +4,7 @@ namespace Tickleman\ZombicideRocks;
 use ITRocks\Framework\Dao\File\Session_File\Files;
 use ITRocks\Framework\Session;
 use ITRocks\Framework\Traits\Has_Code;
+use /** @noinspection PhpUnusedAliasInspection $url @widget */ Tickleman\ZombicideRocks\Link\Url;
 use Tickleman\ZombicideRocks\Mission\Author;
 use Tickleman\ZombicideRocks\Mission\Objective;
 use Tickleman\ZombicideRocks\Mission\Special_Rule;
@@ -64,6 +65,20 @@ class Mission
 	 * @var string
 	 */
 	public $introduction;
+
+	//------------------------------------------------------------------------------- $link_to_source
+	/**
+	 * @var string
+	 * @widget Url
+	 */
+	public $link_to_source;
+
+	//----------------------------------------------------------------------------- $link_to_scenario
+	/**
+	 * @var string
+	 * @widget Url
+	 */
+	public $link_to_scenario;
 
 	//------------------------------------------------------------------------------------- $material
 	/**
