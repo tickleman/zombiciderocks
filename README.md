@@ -8,31 +8,33 @@ J'enchaîne donc avec la création d'un fansite (de plus) qui me servira de base
 
 ## Changelog
 
-14/03/2017 - Je viens à peine de commencer ce site internet, un peu de patience !
+24/08/2017 - Révision les URI pour qu'elles soient plus compactes, Ctrl+click sur une liste modifiable pour avoir une fenêtre popup
 
-16/03/2017 - Design de base, structure de données pour les données de missions, et le [blog des survivants](https://zombicide.rocks/index/Tickleman/ZombicideRocks/Blog/Entries), et un menu
+13/08/2017 - Editeur de [misions](https://zombicide.rocks/missions) : sauvegarde de la disposition des tuiles
 
-18/03/2017 - Image et tags liés aux [tuiles](https://zombicide.rocks/index/Tickleman/ZombicideRocks/Tiles)
+12/08/2017 - Editeur de [misions](https://zombicide.rocks/missions) : glisser-déposer des tuiles, rotations, ajout de lignes et de colonnes sur le plan, favicon pour le site
 
-19/03/2017 - Ajout de la section [liens](https://zombicide.rocks/index/Tickleman/ZombicideRocks/Links) et [outils](https://zombicide.rocks/index/Tickleman/ZombicideRocks/Link/Tools)
+26/07/2017 - Editeur de [missions](https://zombicide.rocks/missions) : vue latérale des tuiles des boîtes de jeu, vue de la carte dans l'éditeur
 
-26/03/2017 - Ajout d'une légende pour les images liées au [blog](https://zombicide.rocks/index/Tickleman/ZombicideRocks/Blog/Entries)
+16/07/2017 - Organisation des données dans le formulaire de création de [mission](https://zombicide.rocks/missions)
 
-07/05/2017 - Ajout de la section "news" sur la [page d'accueil](https://zombicide.rocks/index)
+09/07/2017 - Affichage du plan dans les [missions](https://zombicide.rocks/missions), structure de donées pour le placement des jetons sur le plan
 
-02/07/2017 - Ajout des textes de [missions](https://zombicide.rocks/index/Tickleman/ZombicideRocks/Missions) : introduction, objectifs, règles spéciales
+03/07/2017 - Affichage des [missions](https://zombicide.rocks/missions) sympa avec un design proche de celui du manuel du jeu
 
-03/07/2017 - Affichage des [missions](https://zombicide.rocks/index/Tickleman/ZombicideRocks/Missions) sympa avec un design proche de celui du manuel du jeu
+02/07/2017 - Ajout des textes de [missions](https://zombicide.rocks/missions) : introduction, objectifs, règles spéciales
 
-09/07/2017 - Affichage du plan dans les [missions](https://zombicide.rocks/index/Tickleman/ZombicideRocks/Missions), structure de donées pour le placement des jetons sur le plan
+07/05/2017 - Ajout de la section "news" sur la [page d'accueil](https://zombicide.rocks)
 
-16/07/2017 - Organisation des données dans le formulaire de création de [mission](https://zombicide.rocks/index/Tickleman/ZombicideRocks/Missions)
+26/03/2017 - Ajout d'une légende pour les images liées au [blog](https://zombicide.rocks/blog)
 
-26/07/2017 - Editeur de [missions](https://zombicide.rocks/index/Tickleman/ZombicideRocks/Missions) : vue latérale des tuiles des boîtes de jeu, vue de la carte dans l'éditeur
+19/03/2017 - Ajout de la section [liens](https://zombicide.rocks/liens) et [outils](https://zombicide.rocks/outils)
 
-12/08/2017 - Editeur de [misions](https://zombicide.rocks/index/Tickleman/ZombicideRocks/Missions) : glisser-déposer des tuiles, rotations, ajout de lignes et de colonnes sur le plan, favicon pour le site
+18/03/2017 - Image et tags liés aux [tuiles](https://zombicide.rocks/tuiles)
 
-13/08/2017 - Editeur de [misions](https://zombicide.rocks/index/Tickleman/ZombicideRocks/Missions) : sauvegarde de la disposition des tuiles
+16/03/2017 - Design de base, structure de données pour les données de missions, et le [blog des survivants](https://zombicide.rocks/blog), et un menu
+
+14/03/2017 - Début du projet site
 
 ## Roadmap
 
