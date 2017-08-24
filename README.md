@@ -10,9 +10,9 @@ J'enchaîne donc avec la création d'un fansite (de plus) qui me servira de base
 
 24/08/2017 - Révision les URI pour qu'elles soient plus compactes, Ctrl+click sur une liste modifiable pour avoir une fenêtre popup
 
-13/08/2017 - Editeur de [misions](https://zombicide.rocks/missions) : sauvegarde de la disposition des tuiles
+13/08/2017 - Editeur de [missions](https://zombicide.rocks/missions) : sauvegarde de la disposition des tuiles
 
-12/08/2017 - Editeur de [misions](https://zombicide.rocks/missions) : glisser-déposer des tuiles, rotations, ajout de lignes et de colonnes sur le plan, favicon pour le site
+12/08/2017 - Editeur de [missions](https://zombicide.rocks/missions) : glisser-déposer des tuiles, rotations, ajout de lignes et de colonnes sur le plan, favicon pour le site
 
 26/07/2017 - Editeur de [missions](https://zombicide.rocks/missions) : vue latérale des tuiles des boîtes de jeu, vue de la carte dans l'éditeur
 
