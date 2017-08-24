@@ -1,3 +1,7 @@
 RewriteEngine On
+
+RewriteCond %{HTTP_HOST} ^www\.zombicide\.rocks$
+RewriteRule ^(.*)$ https://zombicide.rocks/$1 [R=301,L]
+
 RewriteCond %{REQUEST_FILENAME} !-f
-RewriteRule (.*) /index/$1 [L]
+RewriteRule ^(.*)$ /index/$1 [L]
