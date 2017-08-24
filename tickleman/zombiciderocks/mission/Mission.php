@@ -14,8 +14,9 @@ use Tickleman\ZombicideRocks\Mission\Tile\Grid;
  * A mission for Zombicide
  *
  * @business
- * @display_order code, title, difficulty_level, survivors_count, duration, author, introduction,
- *                material, tiles, equipment_cards, zombie_cards, objectives, special_rules
+ * @display_order code, title, difficulty_level, survivors_count, duration, author, link_to_source,
+ *                link_to_scenario, introduction, material, tiles, equipment_cards, zombie_cards,
+ *                objectives, special_rules
  * @group _top code, title
  * @group Main difficulty_level, survivors_count, duration, author
  * @group Story introduction, objectives, special_rules

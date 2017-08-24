@@ -19,6 +19,14 @@
 		}
 	}
 
+	> .author {
+		margin-top: .5em;
+
+		a:not(:first-of-type):before {
+			content: ' / ';
+		}
+	}
+
 	> ul.characteristics {
 		font-family: Impact, Helvetica, serif;
 		font-size: 18px;

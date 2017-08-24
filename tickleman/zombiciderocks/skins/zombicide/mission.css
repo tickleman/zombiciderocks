@@ -11,6 +11,10 @@
     .mission.output > h2 > .title {
       margin-left: .5em;
       text-transform: uppercase; }
+  .mission.output > .author {
+    margin-top: .5em; }
+    .mission.output > .author a:not(:first-of-type):before {
+      content: ' / '; }
   .mission.output > ul.characteristics {
     font-family: Impact, Helvetica, serif;
     font-size: 18px;
