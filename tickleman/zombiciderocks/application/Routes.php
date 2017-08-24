@@ -64,7 +64,8 @@ class Routes implements Registerable
 		foreach (static::ROUTES as $link => $route) {
 			$link = Paths::$uri_base . $link;
 			if (preg_match('~' . $link . '$~', $result)) {
-				$result = preg_replace('~' . $link . '$~', Paths::$uri_base . $route, $result);
+				$uri_base = lParse(Paths::$uri_base, '/index');
+				$result   = preg_replace('~' . $link . '$~', $uri_base . $route, $result);
 				break;
 			}
 		}
