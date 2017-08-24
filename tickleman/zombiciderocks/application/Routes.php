@@ -15,24 +15,24 @@ class Routes implements Registerable
 
 	//---------------------------------------------------------------------------------------- ROUTES
 	const ROUTES = [
-		'/ITRocks/Framework/User/(.*)'                      => '/member/$1',
-		'/ITRocks/Framework/Users'                          => '/members',
-		'/ITRocks/Framework/Users/dataList(.*)'             => '/members$1',
+		'/ITRocks/Framework/User/(.*)'                      => '/membre/$1',
+		'/ITRocks/Framework/Users'                          => '/membres',
+		'/ITRocks/Framework/Users/dataList(.*)'             => '/membres$1',
 		// Entry before Entries, because conflict of naming of blog (same for singular en plural)
 		'/Tickleman/ZombicideRocks/Blog/Entry/(.*)'                => '/blog/$1',
 		'/Tickleman/ZombicideRocks/Blog/Blog_Entries/dataList(.*)' => '/blog$1',
 		'/Tickleman/ZombicideRocks/Blog/Entries'                   => '/blog',
 		'/Tickleman/ZombicideRocks/Blog/Entries/dataList(.*)'      => '/blog$1',
-		'/Tickleman/ZombicideRocks/Box/(.*)'                       => '/box/$1',
-		'/Tickleman/ZombicideRocks/Boxes'                          => '/boxes',
-		'/Tickleman/ZombicideRocks/Boxes/dataList(.*)'             => '/boxes$1',
-		'/Tickleman/ZombicideRocks/Token/(.*)'                     => '/token/$1',
-		'/Tickleman/ZombicideRocks/Tokens'                         => '/tokens',
-		'/Tickleman/ZombicideRocks/Tokens/dataList(.*)'            => '/tokens$1',
+		'/Tickleman/ZombicideRocks/Box/(.*)'                       => '/boite/$1',
+		'/Tickleman/ZombicideRocks/Boxes'                          => '/boites',
+		'/Tickleman/ZombicideRocks/Boxes/dataList(.*)'             => '/boites$1',
+		'/Tickleman/ZombicideRocks/Token/(.*)'                     => '/jeton/$1',
+		'/Tickleman/ZombicideRocks/Tokens'                         => '/jetons',
+		'/Tickleman/ZombicideRocks/Tokens/dataList(.*)'            => '/jetons$1',
 		// author before mission, because conflict
-		'/Tickleman/ZombicideRocks/Mission/Author/(.*)'            => '/author/$1',
-		'/Tickleman/ZombicideRocks/Mission/Authors'                => '/authors',
-		'/Tickleman/ZombicideRocks/Mission/Author/dataList(.*)'    => '/author$1',
+		'/Tickleman/ZombicideRocks/Mission/Author/(.*)'            => '/auteur/$1',
+		'/Tickleman/ZombicideRocks/Mission/Authors'                => '/auteurs',
+		'/Tickleman/ZombicideRocks/Mission/Author/dataList(.*)'    => '/auteurs$1',
 		'/Tickleman/ZombicideRocks/Mission/(.*)'                   => '/mission/$1',
 		'/Tickleman/ZombicideRocks/Missions'                       => '/missions',
 		'/Tickleman/ZombicideRocks/Missions/dataList(.*)'          => '/missions$1',
@@ -40,19 +40,19 @@ class Routes implements Registerable
 		'/Tickleman/ZombicideRocks/Tile/Tag/(.*)'                  => '/tag/$1',
 		'/Tickleman/ZombicideRocks/Tile/Tags'                      => '/tags',
 		'/Tickleman/ZombicideRocks/Tile/Tags/dataList(.*)'         => '/tags$1',
-		'/Tickleman/ZombicideRocks/Tile/(.*)'                      => '/tile/$1',
-		'/Tickleman/ZombicideRocks/Tiles'                          => '/tiles',
-		'/Tickleman/ZombicideRocks/Tiles/dataList(.*)'             => '/tiles$1',
+		'/Tickleman/ZombicideRocks/Tile/(.*)'                      => '/tuile/$1',
+		'/Tickleman/ZombicideRocks/Tiles'                          => '/tuiles',
+		'/Tickleman/ZombicideRocks/Tiles/dataList(.*)'             => '/tuiles$1',
 		// tools before links, because conflict
-		'/Tickleman/ZombicideRocks/Link/Tools'                     => '/tools',
-		'/Tickleman/ZombicideRocks/Link/Tools/dataList(.*)'        => '/tools$1',
-		'/Tickleman/ZombicideRocks/Link/Tool/(.*)'                 => '/tool/$1',
-		'/Tickleman/ZombicideRocks/Link/(.*)'                      => '/link/$1',
-		'/Tickleman/ZombicideRocks/Links'                          => '/links',
-		'/Tickleman/ZombicideRocks/Links/dataList(.*)'             => '/links$1',
-		'/Tickleman/ZombicideRocks/Member/(.*)'                    => '/member/$1',
-		'/Tickleman/ZombicideRocks/Members'                        => '/members',
-		'/Tickleman/ZombicideRocks/Members/dataList(.*)'           => '/members$1'
+		'/Tickleman/ZombicideRocks/Link/Tool/(.*)'                 => '/outil/$1',
+		'/Tickleman/ZombicideRocks/Link/Tools'                     => '/outils',
+		'/Tickleman/ZombicideRocks/Link/Tools/dataList(.*)'        => '/outils$1',
+		'/Tickleman/ZombicideRocks/Link/(.*)'                      => '/lien/$1',
+		'/Tickleman/ZombicideRocks/Links'                          => '/liens',
+		'/Tickleman/ZombicideRocks/Links/dataList(.*)'             => '/liens$1',
+		'/Tickleman/ZombicideRocks/Member/(.*)'                    => '/membre/$1',
+		'/Tickleman/ZombicideRocks/Members'                        => '/membres',
+		'/Tickleman/ZombicideRocks/Members/dataList(.*)'           => '/membres$1'
 	];
 
 	//----------------------------------------------------------------------------------- linkToRoute
