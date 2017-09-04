@@ -10,6 +10,6 @@
 	"name":              "tickleman/zombiciderocks",
 	"prefer-stable":     true,
 	"repositories":      [{ "type": "composer", "url": "https://packages.bappli.com" }],
-	"require":           { "itrocks/framework": "dev-during-my-holidays" },
+	"require":           { "itrocks/framework": "dev-master" },
 	"type":              "itrocks-final"
 }
