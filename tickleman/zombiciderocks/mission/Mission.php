@@ -15,7 +15,8 @@ use Tickleman\ZombicideRocks\Mission\Tile\Grid;
  *
  * @business
  * @group _top code, title
- * @group Main difficulty_level, survivors_count, duration, author, link_to_source, link_to_scenario
+ * @group Main difficulty_level, survivors_count, maximum_survivors_count, duration, author,
+ *             link_to_source, link_to_scenario
  * @group Map tiles, tokens
  * @group Material material, equipment_cards, zombie_cards
  * @group Story introduction, objectives, special_rules
@@ -85,6 +86,16 @@ class Mission
 	 * @var Box[]
 	 */
 	public $material;
+
+	//---------------------------------------------------------------------- $maximum_survivors_count
+	/**
+	 * If set, the maximum number of survivors that can play the game
+	 *
+	 * @max_size 2
+	 * @null
+	 * @var integer
+	 */
+	public $maximum_survivors_count;
 
 	//----------------------------------------------------------------------------------- $objectives
 	/**
