@@ -9,7 +9,7 @@ use Tickleman\ZombicideRocks\Box\Token_Box;
  * Zombicide game token
  *
  * @business
- * @display_order boxes, name, image
+ * @display_order boxes, name, image, code
  * @list boxes.name, name, image.name
  * @representative name
  */

@@ -9,7 +9,8 @@ use Tickleman\ZombicideRocks\Mission;
 /**
  * Zombicide missions blog entry
  *
- * @display_order title, mission, date, member, players_count, survivors_count, duration
+ * @display_order title, mission, date, member, players_count, survivors_count, duration, story,
+ *                images
  * @list date, title, member.login, mission.title
  * @representative member.login, title
  * @set Blog_Entries

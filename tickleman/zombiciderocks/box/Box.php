@@ -7,6 +7,7 @@ use ITRocks\Framework\Traits\Has_Name;
  * A material box for Zombicide
  *
  * @business
+ * @display_order name, tiles, tokens
  * @set Boxes
  */
 class Box
