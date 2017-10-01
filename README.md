@@ -8,6 +8,8 @@ J'enchaîne donc avec la création d'un fansite (de plus) qui me servira de base
 
 ## Changelog
 
+01/10/2017 - Ajout des campagnes, du nombre maximum de survivants, range correctement les liens de mission, saisie de nouvelles missions issues du Compendium #2
+
 24/08/2017 - Révision les URI pour qu'elles soient plus compactes, Ctrl+click sur une liste modifiable pour avoir une fenêtre popup
 
 13/08/2017 - Editeur de [missions](https://zombicide.rocks/missions) : sauvegarde de la disposition des tuiles
@@ -57,9 +59,9 @@ Pour trouver tout ça, j'irais chercher chez ceux qui ont déjà réuni ces donn
 Pour maîtriser les règles :
 
   - une FAQ sous forme de base de données multi-critères, pour tout savoir sur tout. Chaque règle de cette FAQ qui se voudra géante sera accompagnée pour référence d'un lien précis vers sa source, afin que chaque point soit justifié et vérifié avec soin,
- 
+
   - des liens entre les règles qui se contredisent d'une version à l'autre.
-  
+
 - Des maps et scénarios créés par les joueurs (moi et mes potes).
 
 - Un éditeur de scénarios le plus simple possible d'utilisation pour faire vos propres scénarios, et les visualiser avec un look similaire au manuel du jeu.
@@ -106,7 +108,7 @@ $pwd = [
 
 ## Disclaimer
 
-Je n'ai aucune affiliation avec Edge Entertainement, Cool Mini or Not, le jeu Zombicide. Les noms et marques, le jeu, sont la propriété leurs ayant-droits respectifs. 
+Je n'ai aucune affiliation avec Edge Entertainement, Cool Mini or Not, le jeu Zombicide. Les noms et marques, le jeu, sont la propriété leurs ayant-droits respectifs.
 
 ## MIT License
 

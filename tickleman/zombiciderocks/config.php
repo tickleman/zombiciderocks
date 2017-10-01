@@ -45,10 +45,11 @@ $config['Tickleman/ZombicideRocks'] = [
 		Menu::class => [
 			Menu::TITLE => [SL, 'Home', '#main'],
 			'Databases' => [
-				'/Tickleman/ZombicideRocks/Missions' => 'Missions',
-				'/Tickleman/ZombicideRocks/Boxes'    => 'Boxes',
-				'/Tickleman/ZombicideRocks/Tiles'    => 'Tiles',
-				'/Tickleman/ZombicideRocks/Tokens'   => 'Tokens'
+				'/Tickleman/ZombicideRocks/Missions'  => 'Missions',
+				'/Tickleman/ZombicideRocks/Campaigns' => 'Campaigns',
+				'/Tickleman/ZombicideRocks/Boxes'     => 'Boxes',
+				'/Tickleman/ZombicideRocks/Tiles'     => 'Tiles',
+				'/Tickleman/ZombicideRocks/Tokens'    => 'Tokens'
 			],
 			'Stories' => [
 				'/Tickleman/ZombicideRocks/Blog/Entries' => 'Survivors missions blog'

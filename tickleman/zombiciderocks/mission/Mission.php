@@ -1,9 +1,11 @@
 <?php
 namespace Tickleman\ZombicideRocks;
 
+use ITRocks\Framework\Dao;
 use ITRocks\Framework\Dao\File\Session_File\Files;
 use ITRocks\Framework\Session;
 use ITRocks\Framework\Traits\Has_Code;
+use Tickleman\ZombicideRocks\Campaign\Campaign_Mission;
 use /** @noinspection PhpUnusedAliasInspection $url @widget */ Tickleman\ZombicideRocks\Link\Url;
 use Tickleman\ZombicideRocks\Mission\Author;
 use Tickleman\ZombicideRocks\Mission\Objective;
@@ -13,8 +15,10 @@ use Tickleman\ZombicideRocks\Mission\Tile\Grid;
 /**
  * A mission for Zombicide
  *
+ * @after_read
+ * @after_write
  * @business
- * @group _top code, title
+ * @group _top code, title, campaign
  * @group Main difficulty_level, survivors_count, maximum_survivors_count, duration, author,
  *             link_to_source, link_to_scenario
  * @group Map tiles, tokens
@@ -35,6 +39,14 @@ class Mission
 	 * @var Author
 	 */
 	public $author;
+
+	//------------------------------------------------------------------------------------- $campaign
+	/**
+	 * @link Object
+	 * @store false
+	 * @var Campaign
+	 */
+	public $campaign;
 
 	//----------------------------------------------------------------------------- $difficulty_level
 	/**
@@ -164,6 +176,53 @@ class Mission
 	public function __toString()
 	{
 		return trim(strval($this->code) . SP . strval($this->title));
+	}
+
+	//------------------------------------------------------------------------------------- afterRead
+	/**
+	 * Get campaign from its Campaign_Mission, if exists.
+	 * Getting it once the mission is read is the simplest thing, not the most optimized.
+	 */
+	public function afterRead()
+	{
+		$campaign_mission = Dao::searchOne(['mission' => $this], Campaign_Mission::class);
+		if ($campaign_mission) {
+			$this->campaign = $campaign_mission->campaign;
+		}
+	}
+
+	//------------------------------------------------------------------------------------ afterWrite
+	/**
+	 * Link mission to campaign if needed.
+	 * Remove the link if removed.
+	 */
+	public function afterWrite()
+	{
+		// remove this mission from the campaigns it is not linked to
+		foreach (Dao::search(['mission' => $this], Campaign_Mission::class) as $campaign_mission) {
+			if (!$this->campaign || !Dao::is($campaign_mission->campaign, $this->campaign)) {
+				Dao::delete($campaign_mission);
+			}
+		}
+		// add this mission to its campaign, if not already in it
+		if ($this->campaign) {
+			$already_in_campaign = false;
+			$maximum_ordering    = 0;
+			foreach ($this->campaign->missions as $campaign_mission) {
+				if (Dao::is($campaign_mission->mission, $this)) {
+					$already_in_campaign = true;
+					break;
+				}
+				$maximum_ordering = max($maximum_ordering, $campaign_mission->ordering);
+			}
+			if (!$already_in_campaign) {
+				$campaign_mission           = new Campaign_Mission();
+				$campaign_mission->campaign = $this->campaign;
+				$campaign_mission->mission  = $this;
+				$campaign_mission->ordering = $maximum_ordering + 1;
+				Dao::write($campaign_mission);
+			}
+		}
 	}
 
 	//------------------------------------------------------------------------------------- tileCodes
