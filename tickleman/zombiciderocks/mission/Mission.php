@@ -18,7 +18,7 @@ use Tickleman\ZombicideRocks\Mission\Tile\Grid;
  *                link_to_scenario, introduction, material, tiles, equipment_cards, zombie_cards,
  *                objectives, special_rules
  * @group _top code, title
- * @group Main difficulty_level, survivors_count, duration, author
+ * @group Main difficulty_level, survivors_count, duration, author, link_to_source, link_to_scenario
  * @group Story introduction, objectives, special_rules
  * @group Material material, equipment_cards, zombie_cards
  * @group Map tiles, tokens
