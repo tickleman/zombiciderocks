@@ -21,4 +21,12 @@
   .mission.edit.window .multiple.tiles .tiles.material > ul > li > ul {
     width: 210px; }
     .mission.edit.window .multiple.tiles .tiles.material > ul > li > ul > li {
-      display: inline-block; }
+      display: inline-block;
+      position: relative; }
+      .mission.edit.window .multiple.tiles .tiles.material > ul > li > ul > li > span {
+        background-color: darkgray;
+        bottom: 4px;
+        font-weight: bold;
+        position: absolute;
+        right: 4px;
+        text-transform: uppercase; }
