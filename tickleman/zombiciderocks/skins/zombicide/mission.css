@@ -1,3 +1,4 @@
+@charset "UTF-8";
 .mission.output {
   font-family: Helvetica-Neue-LT-Std, Helvetica, serif; }
   .mission.output > h2 {
@@ -87,6 +88,6 @@
     .mission.output > .objectives > ul > li {
       list-style: none; }
       .mission.output > .objectives > ul > li:not(.position0):before {
-        content: counter(objectives,decimal) " - ";
+        content: counter(objectives,decimal) " —\a";
         counter-increment: objectives;
         font-weight: bold; }

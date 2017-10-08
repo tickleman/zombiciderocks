@@ -151,7 +151,7 @@
 			list-style: none;
 
 			&:not(.position0):before {
-				content: counter(objectives,decimal) ' - ';
+				content: counter(objectives,decimal) ' \2014\A';
 				counter-increment: objectives;
 				font-weight: bold;
 			}
