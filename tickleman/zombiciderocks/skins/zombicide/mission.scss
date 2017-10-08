@@ -1,5 +1,7 @@
 .mission.output {
-
+	@media only screen and (min-width: 1620px) {
+		column-count: 2;
+	}
 	font-family: Helvetica-Neue-LT-Std, Helvetica, serif;
 
 	> h2 {

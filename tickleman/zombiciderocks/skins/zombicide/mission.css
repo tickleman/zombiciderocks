@@ -1,6 +1,9 @@
 @charset "UTF-8";
 .mission.output {
   font-family: Helvetica-Neue-LT-Std, Helvetica, serif; }
+  @media only screen and (min-width: 1620px) {
+    .mission.output {
+      column-count: 2; } }
   .mission.output > h2 {
     color: #f89d0e;
     font-family: Impact, Helvetica, serif;
