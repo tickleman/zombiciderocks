@@ -33,19 +33,31 @@
   .mission.output > .material {
     margin: .5em 0; }
     .mission.output > .material > h3 {
-      display: inline-block;
+      display: inline;
       font-weight: normal; }
-    .mission.output > .material > ul {
-      display: inline-block; }
-      .mission.output > .material > ul:before {
+      .mission.output > .material > h3:before {
+        content: '\A';
+        white-space: pre; }
+    .mission.output > .material > ul.material {
+      display: inline; }
+      .mission.output > .material > ul.material:before {
         content: ' : '; }
-      .mission.output > .material > ul > li {
+      .mission.output > .material > ul.material > li {
+        display: inline-block;
+        font-weight: bold; }
+        .mission.output > .material > ul.material > li:not(:first-child):before {
+          content: ', '; }
+    .mission.output > .material > ul.tiles {
+      display: inline; }
+      .mission.output > .material > ul.tiles:before {
+        content: ' : '; }
+      .mission.output > .material > ul.tiles > li {
         display: inline-block;
         font-weight: bold;
         text-transform: uppercase; }
-        .mission.output > .material > ul > li:not(:first-child):not(:last-child):before {
+        .mission.output > .material > ul.tiles > li:not(:first-child):not(:last-child):before {
           content: ', '; }
-        .mission.output > .material > ul > li:not(:first-child):last-child:before {
+        .mission.output > .material > ul.tiles > li:not(:first-child):last-child:before {
           content: 'et ';
           margin-left: .3em;
           text-transform: none; }

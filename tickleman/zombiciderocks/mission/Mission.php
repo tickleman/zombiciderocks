@@ -225,6 +225,24 @@ class Mission
 		}
 	}
 
+	//--------------------------------------------------------------------------------- moreSurvivors
+	/**
+	 * Returns '+' if more survivors are allowed
+	 * Returns '-n' if the maximum survivors count is known
+	 *
+	 * @return string @values +,
+	 */
+	public function moreSurvivors()
+	{
+		if ($this->maximum_survivors_count > $this->survivors_count) {
+			return '-' . $this->maximum_survivors_count;
+		}
+		if (!$this->maximum_survivors_count) {
+			return '+';
+		}
+		return '';
+	}
+
 	//------------------------------------------------------------------------------------- tileCodes
 	/**
 	 * Returns the list of tile codes, sorted

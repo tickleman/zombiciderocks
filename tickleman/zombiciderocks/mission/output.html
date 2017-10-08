@@ -18,7 +18,7 @@
 
 		<ul class="characteristics">
 			<li class="level">|{difficulty_level}|</li>
-			<li class="survivors">{survivors_count} |survivors|</li>
+			<li class="survivors">|!{survivors_count}{survivorsPlus}! survivors|</li>
 			<li class="duration">{duration} |minutes|</li>
 		</ul>
 
@@ -30,6 +30,9 @@
 			<!--link_to_scenario?-->
 				<a class="scenario" href="{link_to_scenario}">|Original scenario|</a>
 			<!--link_to_scenario?-->
+			<!--campaign-->
+				<a class="campaign" href="{@link}">|A mission from the !{name}! campaign|</a>
+			<!--campaign-->
 		</p>
 
 		<!--introduction?-->
@@ -40,8 +43,10 @@
 
 		<!--tiles?-->
 		<div class="material">
+			<h3>|Required material|</h3>
+			<ul class="material"><!--material--><li>{.}</li><!--material--></ul>
 			<h3>|Required tiles|</h3>
-			<ul><!--tileCodes--><li>{.}</li><!--tileCodes--></ul>
+			<ul class="tiles"><!--tileCodes--><li>{.}</li><!--tileCodes--></ul>
 		</div>
 		<!--tiles?-->
 

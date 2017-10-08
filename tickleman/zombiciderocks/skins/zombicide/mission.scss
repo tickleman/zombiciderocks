@@ -54,12 +54,35 @@
 		margin: .5em 0;
 
 		> h3 {
-			display: inline-block;
+			display: inline;
 			font-weight: normal;
+
+			&:before {
+				content: '\A';
+				white-space: pre;
+			}
 		}
 
-		> ul {
-			display: inline-block;
+		> ul.material {
+			display: inline;
+
+			&:before {
+				content: ' : ';
+			}
+
+			> li {
+				display: inline-block;
+				font-weight: bold;
+
+				&:not(:first-child):before {
+					content: ', ';
+				}
+			}
+
+		}
+
+		> ul.tiles {
+			display: inline;
 
 			&:before {
 				content: ' : ';
