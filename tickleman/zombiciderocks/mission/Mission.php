@@ -50,7 +50,7 @@ class Mission
 
 	//----------------------------------------------------------------------------- $difficulty_level
 	/**
-	 * @values easy, medium, hard
+	 * @values easy, medium, hard,
 	 * @var string
 	 */
 	public $difficulty_level;
@@ -223,6 +223,30 @@ class Mission
 				Dao::write($campaign_mission);
 			}
 		}
+	}
+
+	//-------------------------------------------------------------------------- hasAuthorInformation
+	/**
+	 * Returns true if the mission has any author information of :
+	 * author, link to source, link to scenario, campaign
+	 *
+	 * @return boolean
+	 */
+	public function hasAuthorInformation()
+	{
+		return $this->author || $this->link_to_source || $this->link_to_scenario || $this->campaign;
+	}
+
+	//---------------------------------------------------------------------------- hasCharacteristics
+	/**
+	 * Returns true if the mission has any characteristic of :
+	 * difficulty level, survivors count, duration
+	 *
+	 * @return boolean
+	 */
+	public function hasCharacteristics()
+	{
+		return $this->difficulty_level || $this->survivors_count || $this->duration;
 	}
 
 	//--------------------------------------------------------------------------------- moreSurvivors

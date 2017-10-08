@@ -16,14 +16,23 @@
 			<span class="title">{title}</span>
 		</h2>
 
+		<!--hasCharacteristics?-->
 		<ul class="characteristics">
+			<!--difficulty_level?-->
 			<li class="level">|{difficulty_level}|</li>
+			<!--difficulty_level?-->
+			<!--survivors_count?-->
 			<li class="survivors">|!{survivors_count}{survivorsPlus}! survivors|</li>
+			<!--survivors_count?-->
+			<!--duration?-->
 			<li class="duration">{duration} |minutes|</li>
+			<!--duration?-->
 		</ul>
+		<!--hasCharacteristics?-->
 
+		<!--hasAuthorInformation?-->
 		<p class="author">
-			|A scenario by| <span>{author.name}</span>
+			<!--author?-->|A scenario by| <span>{author.name}</span><!--author?-->
 			<!--link_to_source?-->
 				<a class="source" href="{link_to_source}">|Source|</a>
 			<!--link_to_source?-->
@@ -34,6 +43,7 @@
 				<a class="campaign" href="{@link}">|A mission from the !{name}! campaign|</a>
 			<!--campaign-->
 		</p>
+		<!--hasAuthorInformation?-->
 
 		<!--introduction?-->
 		<p class="introduction">
