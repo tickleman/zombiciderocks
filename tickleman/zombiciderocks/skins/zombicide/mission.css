@@ -81,7 +81,7 @@
       .mission.output > .objectives > ul > li > h4:empty, .mission.output .special.rules > ul > li > h4:empty {
         display: none; }
       .mission.output > .objectives > ul > li > p, .mission.output .special.rules > ul > li > p {
-        display: inline-block;
+        display: inline;
         white-space: pre-line; }
   .mission.output > .objectives {
     counter-reset: objectives; }
