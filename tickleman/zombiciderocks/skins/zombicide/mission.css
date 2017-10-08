@@ -8,7 +8,8 @@
     font-weight: normal;
     margin-bottom: .6em; }
     .mission.output > h2 > .code {
-      font-size: 200%; }
+      font-size: 200%;
+      text-transform: uppercase; }
     .mission.output > h2 > .title {
       margin-left: .5em;
       text-transform: uppercase; }
