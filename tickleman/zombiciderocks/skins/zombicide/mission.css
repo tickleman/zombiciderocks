@@ -72,7 +72,19 @@
     padding-left: 16px; }
     .mission.output > .objectives > ul > li, .mission.output .special.rules > ul > li {
       margin: 1em 0; }
+      .mission.output > .objectives > ul > li > h4:not(:empty), .mission.output .special.rules > ul > li > h4:not(:empty) {
+        display: inline-block; }
+        .mission.output > .objectives > ul > li > h4:not(:empty):after, .mission.output .special.rules > ul > li > h4:not(:empty):after {
+          content: ' ';
+          white-space: pre; }
+      .mission.output > .objectives > ul > li > h4:empty, .mission.output .special.rules > ul > li > h4:empty {
+        display: none; }
       .mission.output > .objectives > ul > li > p, .mission.output .special.rules > ul > li > p {
         display: inline-block; }
-      .mission.output > .objectives > ul > li > h4:not(:empty):after, .mission.output .special.rules > ul > li > h4:not(:empty):after {
-        content: '. '; }
+  .mission.output > .objectives {
+    counter-reset: objectives; }
+    .mission.output > .objectives > ul > li {
+      list-style: none; }
+      .mission.output > .objectives > ul > li:not(.position0):before {
+        content: counter(objectives,decimal) ". ";
+        counter-increment: objectives; }
