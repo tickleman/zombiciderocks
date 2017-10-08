@@ -86,5 +86,6 @@
     .mission.output > .objectives > ul > li {
       list-style: none; }
       .mission.output > .objectives > ul > li:not(.position0):before {
-        content: counter(objectives,decimal) ". ";
-        counter-increment: objectives; }
+        content: counter(objectives,decimal) " - ";
+        counter-increment: objectives;
+        font-weight: bold; }
