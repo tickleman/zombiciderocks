@@ -64,6 +64,12 @@ $(document).ready(function()
 					$left.before($new_left);
 					$new_left.droppable(droppable);
 				}).html('&nbsp;')
+				// move all tokens to the right
+				$tile.closest('#tab_map').find('.mission.tokens>li').each(function() {
+					var $token = $(this);
+					var left   = parseInt($token.css('left').replace('px', ''));
+					$token.css('left', (left + 250).toString() + 'px');
+				});
 			}
 		};
 
@@ -107,6 +113,12 @@ $(document).ready(function()
 				});
 				$top.before($new_top);
 				$new_top.find('td').droppable(droppable);
+				// move all tokens down
+				$tile.closest('#tab_map').find('.mission.tokens>li').each(function() {
+					var $token = $(this);
+					var top    = parseInt($token.css('top').replace('px', ''));
+					$token.css('top', (top + 250).toString() + 'px');
+				});
 			}
 		};
 
