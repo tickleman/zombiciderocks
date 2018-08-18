@@ -1,6 +1,5 @@
 <!--use ITRocks\Framework\Html_Session-->
 <!--use ITRocks\Framework\Locale\Loc-->
-<!--use ITRocks\Framework\Session-->
 <!--use ITRocks\Framework\Tools\Paths-->
 <!--use ITRocks\Framework\Widget\Menu-->
 <!DOCTYPE html>
@@ -10,8 +9,11 @@
 	<meta content="#ffffff" name="theme-color">
 	<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
 	<meta content="width=device-width, initial-scale=1.0" name="viewport">
+	<title>
+		|{@application.ucwords}| - |¦{@class.ucfirst}¦ {@feature.display}|
+	</title>
 
-	{/Tickleman/ZombicideRocks/assets.html}
+	{/tickleman/zombiciderocks/assets.html}
 
 	<script type="text/javascript">
 		window.app = new App(
@@ -19,10 +21,6 @@
 			'{Loc.language}', '{Loc.date.format}', '{Html_Session.useCookies}'
 		);
 	</script>
-
-	<title>
-		|{@application.ucwords}| - |¦{@class.ucfirst}¦ {@feature.display}|
-	</title>
 
 </head>
 
