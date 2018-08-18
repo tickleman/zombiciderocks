@@ -2,7 +2,7 @@ body {
   background: url("img/mission-border.jpg") no-repeat right bottom; }
   body header {
     background-image: url("img/shadows.jpg");
-    height: 267px; }
+    height: 94px; }
   body h1 {
     background: -webkit-linear-gradient(#eee, #333);
     font-size: 72px;
@@ -10,7 +10,7 @@ body {
     left: 60px;
     position: absolute;
     text-shadow: 1px 1px #c00, 2px 2px #600;
-    top: 140px;
+    top: 12px;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent; }
     body h1 a {
