@@ -29,7 +29,9 @@ class Routes implements Registerable
 		'/ITRocks/Framework/User/(.*)'                      => '/membre/$1',
 		'/ITRocks/Framework/Users'                          => '/membres',
 		'/ITRocks/Framework/Users/dataList(.*)'             => '/membres$1',
-		// Entry before Entries, because conflict of naming of blog (same for singular en plural)
+		// Resolve the blog list before individual entries. dataList was renamed to list.
+		'/Tickleman/ZombicideRocks/Blog/Blog_Entries/list'         => '/blog',
+		'/Tickleman/ZombicideRocks/Blog/Blog_Entries/list(.*)'     => '/blog/list$1',
 		'/Tickleman/ZombicideRocks/Blog/Entry/(.*)'                => '/blog/$1',
 		'/Tickleman/ZombicideRocks/Blog/Blog_Entries/dataList(.*)' => '/blog$1',
 		'/Tickleman/ZombicideRocks/Blog/Entries'                   => '/blog',

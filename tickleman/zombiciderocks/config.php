@@ -53,7 +53,7 @@ $config['Tickleman/ZombicideRocks'] = [
 				'/Tickleman/ZombicideRocks/Tokens'    => 'Tokens'
 			],
 			'Stories' => [
-				'/Tickleman/ZombicideRocks/Blog/Entries' => 'Survivors missions blog'
+				'/Tickleman/ZombicideRocks/Blog/Blog_Entries/list' => 'Survivors missions blog'
 			],
 			'Links' => [
 				'/Tickleman/ZombicideRocks/Links'      => 'Links to other sites',
