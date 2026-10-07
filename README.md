@@ -8,6 +8,12 @@ J'enchaîne donc avec la création d'un fansite (de plus) qui me servira de base
 
 ## Changelog
 
+07/10/2026 - Réouverture du site, migration vers PHP 8.1 et le framework it.rocks 0.2.2303
+
+08/10/2017 - Fiches de [missions](https://zombicide.rocks/missions) : affichage du nombre maximum de survivants, de la campagne associée et du matériel nécessaire, numérotation des objectifs, présentation sur deux colonnes sur les grands écrans
+
+06/10/2017 - Éditeur de [missions](https://zombicide.rocks/missions) : affichage du code de chaque tuile dans le menu du matériel
+
 01/10/2017 - Ajout des campagnes, du nombre maximum de survivants, range correctement les liens de mission, saisie de nouvelles missions issues du Compendium #2
 
 24/08/2017 - Révision les URI pour qu'elles soient plus compactes, Ctrl+click sur une liste modifiable pour avoir une fenêtre popup
