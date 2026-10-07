@@ -1,4 +1,8 @@
-.mission.edit.window .multiple.tiles {
+article.mission.edit #tab_map :is(.component-objects, .objects).tiles {
+	display: block;
+}
+
+article.mission.edit :is(.component-objects, .objects).tiles {
 
 	img {
 		cursor: pointer;
@@ -9,8 +13,16 @@
 	}
 
 	.mission.tiles {
+		border-collapse: collapse;
+		border-spacing: 0;
+		display: table;
+
+		> tbody {
+			display: table-row-group;
+		}
 
 		tr {
+			display: table-row;
 
 			&:hover {
 				background-color: inherit;
@@ -21,6 +33,16 @@
 				font-size: 1px;
 				padding: 0;
 				vertical-align: middle;
+
+				&:not(.more) {
+					height: 250px;
+					min-width: 250px;
+					width: 250px;
+				}
+
+				> img {
+					display: block;
+				}
 
 				&.ui-droppable-hover {
 					filter: brightness(110%);

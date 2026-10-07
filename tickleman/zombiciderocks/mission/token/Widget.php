@@ -10,7 +10,7 @@ use Tickleman\ZombicideRocks\Mission;
 use Tickleman\ZombicideRocks\Mission\Token;
 
 /**
- * Mission token map widget : graphical tokens display and value building
+ * Mission token map widget: graphical tokens display and value building
  *
  * @override value @var Token[]
  * @property Token[] value
@@ -40,7 +40,7 @@ class Widget extends Property
 	/**
 	 * @return string
 	 */
-	public function buildHtml()
+	public function buildHtml() : string
 	{
 		$this->mission = $this->template->getParameter(Mission::class);
 		array_unshift($this->parameters, $this);
@@ -53,10 +53,10 @@ class Widget extends Property
 	 * @param $null_if_empty boolean
 	 * @return Token[]
 	 */
-	public function buildValue($object, $null_if_empty)
+	public function buildValue(object $object, bool $null_if_empty) : mixed
 	{
 		$tokens = [];
-		foreach (json_decode($this->value) as $value) {
+		foreach (json_decode(strval($this->value)) as $value) {
 			list($code, $left, $top, $orientation) = $value;
 			$token              = new Token();
 			$token->left        = $left;

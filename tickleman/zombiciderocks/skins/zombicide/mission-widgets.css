@@ -1,26 +1,31 @@
-.mission.edit.window .multiple.tiles, .mission.edit.window .multiple.tokens {
+article.mission.edit :is(.component-objects, .objects).tiles, article.mission.edit :is(.component-objects, .objects).tokens {
+  background-color: transparent;
   border: none; }
-  .mission.edit.window .multiple.tiles > div, .mission.edit.window .multiple.tokens > div {
+  article.mission.edit :is(.component-objects, .objects).tiles .mission.tiles > tbody,
+  article.mission.edit :is(.component-objects, .objects).tiles .mission.tokens > li, article.mission.edit :is(.component-objects, .objects).tokens .mission.tiles > tbody,
+  article.mission.edit :is(.component-objects, .objects).tokens .mission.tokens > li {
+    background-color: transparent; }
+  article.mission.edit :is(.component-objects, .objects).tiles > div, article.mission.edit :is(.component-objects, .objects).tokens > div {
     padding: 0;
     white-space: normal; }
-  .mission.edit.window .multiple.tiles > label, .mission.edit.window .multiple.tokens > label {
+  article.mission.edit :is(.component-objects, .objects).tiles > label, article.mission.edit :is(.component-objects, .objects).tokens > label {
     display: none; }
-.mission.edit.window .multiple .map.editor.instructions {
+article.mission.edit :is(.component-objects, .objects) .map.editor.instructions {
   margin-top: 1em; }
-  .mission.edit.window .multiple .map.editor.instructions h3 {
+  article.mission.edit :is(.component-objects, .objects) .map.editor.instructions h3 {
     margin-bottom: .5em; }
-    .mission.edit.window .multiple .map.editor.instructions h3:after {
+    article.mission.edit :is(.component-objects, .objects) .map.editor.instructions h3:after {
       content: ' :'; }
-  .mission.edit.window .multiple .map.editor.instructions ul {
+  article.mission.edit :is(.component-objects, .objects) .map.editor.instructions ul {
     margin-left: 1.5em; }
-.mission.edit.window .multiple .material {
+article.mission.edit :is(.component-objects, .objects) .material {
   background: white;
   bottom: 0;
   overflow: scroll;
   position: fixed;
   top: 0;
   z-index: 2; }
-  .mission.edit.window .multiple .material h2, .mission.edit.window .multiple .material h3 {
+  article.mission.edit :is(.component-objects, .objects) .material h2, article.mission.edit :is(.component-objects, .objects) .material h3 {
     text-align: center; }
-  .mission.edit.window .multiple .material > ul > li > ul {
+  article.mission.edit :is(.component-objects, .objects) .material > ul > li > ul {
     display: block; }

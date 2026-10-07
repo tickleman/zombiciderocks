@@ -1,7 +1,8 @@
 $(document).ready(function()
 {
-	$('.mission.edit.window').build(function()
+	$('body').build('call', 'article.mission.edit', function()
 	{
+		var $editor = this;
 		var draggable;
 		var droppable;
 		var right_click;
@@ -162,7 +163,7 @@ $(document).ready(function()
 		var setValue = function()
 		{
 			var values = [];
-			$('.mission.tiles tr:not(.more)').each(function() {
+			$editor.find('.mission.tiles tr:not(.more)').each(function() {
 				var row = [];
 				$(this).find('td:not(.more)').each(function() {
 					var $image = $(this).find('img');
@@ -170,7 +171,7 @@ $(document).ready(function()
 				});
 				values.push(row);
 			});
-			$('input[name=tiles]').attr('value', JSON.stringify(values));
+			$editor.find('input[name=tiles]').attr('value', JSON.stringify(values));
 		};
 		setValue();
 
@@ -180,7 +181,7 @@ $(document).ready(function()
 		 *
 		 * When no tile anymore on the line / row : remove it
 		 */
-		this.inside('.mission.tiles img').click(shift_click = function(event)
+		this.find('.mission.tiles img').click(shift_click = function(event)
 		{
 			if (event.shiftKey) {
 				var $tile = $(this).parent();
@@ -196,7 +197,7 @@ $(document).ready(function()
 		 *
 		 * @param event
 		 */
-		this.inside('.mission.tiles img').contextmenu(right_click = function(event)
+		this.find('.mission.tiles img').contextmenu(right_click = function(event)
 		{
 			var $img    = $(this);
 			var convert = { 0: 'north', 90: 'west', 180: 'south', 270: 'east' };
@@ -212,8 +213,8 @@ $(document).ready(function()
 		/**
 		 * Tiles on the map and the material tiles list are draggable : works at an image level
 		 */
-		this.inside('.mission.tiles img, .tiles.material img').draggable(draggable = {
-			appendTo: this.inside('.mission.tiles'),
+		this.find('.mission.tiles img, .tiles.material img').draggable(draggable = {
+			appendTo: this.find('.mission.tiles'),
 			classes:  { 'ui-draggable-handle': 'tile' },
 			helper:   'clone',
 			zIndex:   3
@@ -223,7 +224,7 @@ $(document).ready(function()
 		/**
 		 * Map tiles are droppable : works at a table-cell level : for already-tiled cells, and ready-for-new-tile cells
 		 */
-		this.inside('.mission.tiles td').droppable(droppable = {
+		this.find('.mission.tiles td').droppable(droppable = {
 			accept: 'img.tile',
 
 			drop: function(event, ui)
@@ -239,7 +240,7 @@ $(document).ready(function()
 				var src = $dragged.attr('src').lParse('?');
 
 				$tile
-					.html('<img data-code="' + code + '" src="' + src + '" data-orientation="north">')
+					.html('<img alt="' + code + '" data-code="' + code + '" src="' + src + '" data-orientation="north">')
 					.find('img').click(shift_click).contextmenu(right_click).draggable(draggable);
 
 				setValue();

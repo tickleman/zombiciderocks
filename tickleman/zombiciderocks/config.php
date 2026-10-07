@@ -2,6 +2,7 @@
 namespace Tickleman\ZombicideRocks;
 
 use ITRocks\Framework\Builder;
+use ITRocks\Framework\Component\Menu;
 use ITRocks\Framework\Configuration;
 use ITRocks\Framework\Dao\Mysql\File_Logger;
 use ITRocks\Framework\Locale;
@@ -10,7 +11,6 @@ use ITRocks\Framework\Locale\Number_Format;
 use ITRocks\Framework\Plugin\Priority;
 use ITRocks\Framework\User;
 use ITRocks\Framework\View;
-use ITRocks\Framework\Widget\Menu;
 
 global $loc;
 require __DIR__ . '/../../loc.php';
@@ -31,6 +31,7 @@ $config['Tickleman/ZombicideRocks'] = [
 	//------------------------------------------------------------------------------ Priority::NORMAL
 	Priority::NORMAL => [
 		Application\Routes::class,
+		Mission\Image_Transparency::class,
 		Locale::class => [
 			Locale::DATE     => 'd/m/Y',
 			Locale::LANGUAGE => Language::FR,

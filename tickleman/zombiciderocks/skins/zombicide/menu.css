@@ -1,24 +1,24 @@
-.menu.output {
+nav#menu {
   background-color: #333;
   color: #e1e1e1;
   font-size: 1.5em; }
-  .menu.output .minimize, .menu.output h2 {
+  nav#menu > .actions, nav#menu > h2 {
     display: none; }
-  .menu.output a {
+  nav#menu a {
     color: inherit;
     display: block;
     font-weight: bold;
     padding: .25em;
     text-decoration: none; }
-    .menu.output a:hover {
+    nav#menu a:hover {
       text-decoration: underline; }
-  .menu.output > ul > li {
+  nav#menu > ul > li {
     display: inline-block;
     padding: .25em; }
-    .menu.output > ul > li > ul {
+    nav#menu > ul > li > ul {
       display: none;
       list-style: none; }
-    .menu.output > ul > li:hover > ul {
+    nav#menu > ul > li:hover > ul {
       background-color: #333;
       color: #e1e1e1;
       display: inline-block;
@@ -26,11 +26,11 @@
       padding: .25em;
       position: absolute;
       z-index: 1; }
-      .menu.output > ul > li:hover > ul > li {
+      nav#menu > ul > li:hover > ul > li {
         padding: .25em;
         position: relative; }
 
-.menu.output-NO {
+.legacy-menu {
   background: white;
   border: 1px solid darkgray;
   border-radius: 3px;
@@ -40,42 +40,42 @@
   margin: -30px 4px 4px;
   padding-bottom: 10px;
   position: relative; }
-  .menu.output-NO li {
+  .legacy-menu li {
     margin: 0; }
-  .menu.output-NO > h2 {
+  .legacy-menu > h2 {
     border-bottom: 1px solid #c0c0c0;
     margin: 0 0 4px;
     text-align: center; }
-    .menu.output-NO > h2 > a {
+    .legacy-menu > h2 > a {
       color: black;
       display: block;
       padding: 6px 6px 4px;
       text-decoration: none; }
-  .menu.output-NO > ul {
+  .legacy-menu > ul {
     list-style: none;
     margin: 0;
     padding: 0; }
-    .menu.output-NO > ul > li {
+    .legacy-menu > ul > li {
       background: 3px 3px no-repeat; }
-      .menu.output-NO > ul > li > h3 {
+      .legacy-menu > ul > li > h3 {
         background-color: lightgrey;
         color: black;
         font: bold 12px arial;
         margin: 0;
         padding: 0 6px 0 6px;
         white-space: nowrap; }
-      .menu.output-NO > ul > li > ul {
+      .legacy-menu > ul > li > ul {
         background-color: white;
         list-style: none;
         margin: 0 0 0 6px;
         padding: 2px 0 8px; }
-        .menu.output-NO > ul > li > ul > li > a {
+        .legacy-menu > ul > li > ul > li > a {
           color: black;
           display: block;
           font: 11px arial;
           height: 14px;
           padding: 0 4px;
           text-decoration: none; }
-        .menu.output-NO > ul > li > ul > li > a:hover {
+        .legacy-menu > ul > li > ul > li > a:hover {
           color: darkred;
           text-decoration: underline; }

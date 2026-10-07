@@ -2,9 +2,7 @@
 namespace Tickleman\ZombicideRocks\Blog;
 
 use ITRocks\Framework\Dao\File;
-use ITRocks\Framework\Dao\File\Session_File\Files;
 use ITRocks\Framework\Mapper\Component;
-use ITRocks\Framework\Session;
 use ITRocks\Framework\Tools\Has_Ordering;
 use ITRocks\Framework\Traits\Has_Caption;
 
@@ -44,9 +42,7 @@ class Image
 	 */
 	public function link()
 	{
-		/** @var $session_files Files */
-		$session_files = Session::current()->get(Files::class, true);
-		return $session_files->addAndGetLink($this->file);
+		return $this->file ? $this->file->link() : '';
 	}
 
 }

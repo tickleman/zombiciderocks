@@ -1,14 +1,14 @@
-.mission.edit.window #tab_map {
+article.mission.edit #tab_map {
   position: relative; }
-.mission.edit.window .multiple.tokens {
+article.mission.edit :is(.component-objects, .objects).tokens {
   position: absolute;
   top: 0; }
-  .mission.edit.window .multiple.tokens .mission.tokens > li {
+  article.mission.edit :is(.component-objects, .objects).tokens .mission.tokens > li {
     display: inline-block;
     position: absolute; }
-    .mission.edit.window .multiple.tokens .mission.tokens > li > a {
+    article.mission.edit :is(.component-objects, .objects).tokens .mission.tokens > li > a {
       display: inline-block; }
-  .mission.edit.window .multiple.tokens .tokens.material {
+  article.mission.edit :is(.component-objects, .objects).tokens .tokens.material {
     right: 315px; }
-    .mission.edit.window .multiple.tokens .tokens.material > ul > li > ul > li {
+    article.mission.edit :is(.component-objects, .objects).tokens .tokens.material > ul > li > ul > li {
       text-align: center; }

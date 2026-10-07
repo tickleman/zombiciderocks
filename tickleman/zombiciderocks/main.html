@@ -1,9 +1,9 @@
+<!--use ITRocks\Framework\Component\Menu-->
 <!--use ITRocks\Framework\Html_Session-->
 <!--use ITRocks\Framework\Locale\Loc-->
 <!--use ITRocks\Framework\Tools\Paths-->
-<!--use ITRocks\Framework\Widget\Menu-->
 <!DOCTYPE html>
-<html>
+<html lang="fr">
 
 <head>
 	<meta content="#ffffff" name="theme-color">
@@ -13,7 +13,7 @@
 		|{@application.ucwords}| - |¦{@class.ucfirst}¦ {@feature.display}|
 	</title>
 
-	{/tickleman/zombiciderocks/assets.html}
+	<!--assets-->
 
 	<script type="text/javascript">
 		window.app = new App(
@@ -28,21 +28,23 @@
 
 	<header>
 		<h1><a href="/">Zombicide Rocks !</a></h1>
-		<div id="messages"></div>
+		<div id="messages"><ul id="query"></ul><ul id="responses"></ul></div>
 	</header>
 
 	<!--Menu.get-->
-	{/ITRocks/Framework/Widget/Menu/output}
-	<!--Menu.get-->
+	{/ITRocks/Framework/Component/Menu/output}
+	<!--end-->
 
-	<section class="application center" id="main">
+	<ul id="favorites" hidden><li class="current"><a href="#"></a></li></ul>
+
+	<main class="application center" id="main">
 		{@content}
-	</section>
+	</main>
 
 	<section id="trashcan">
 		<h2>|Trashcan|</h2>
 		<div></div>
-		<a href="/ITRocks/Framework/Widget/Trashcan" target="#trashcan>div">|bin|</a>
+		<a href="/ITRocks/Framework/Component/Trashcan" target="#trashcan>div">|bin|</a>
 	</section>
 
 </body>

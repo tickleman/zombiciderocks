@@ -8,6 +8,7 @@ use Tickleman\ZombicideRocks;
 /**
  * A zombicide tile into a mission
  *
+ * @before_write writePlacementOnly
  * @display_order tile, top, left, orientation
  * @link ZombicideRocks\Tile
  * @set Missions_Tiles

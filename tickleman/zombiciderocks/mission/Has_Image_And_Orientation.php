@@ -1,9 +1,10 @@
 <?php
 namespace Tickleman\ZombicideRocks\Mission;
 
-use ITRocks\Framework\Dao\File\Session_File\Files;
-use ITRocks\Framework\Session;
+use ITRocks\Framework\Dao;
+use ITRocks\Framework\Dao\Data_Link;
 use ITRocks\Framework\Tools\Image;
+use ITRocks\Framework\Tools\Paths;
 
 /**
  * For mission elements that have an image (Tile, Token)
@@ -14,6 +15,25 @@ use ITRocks\Framework\Tools\Image;
 trait Has_Image_And_Orientation
 {
 
+	/**
+	 * Saving a placement must not rewrite the shared tile or token and its box collections.
+	 */
+	public function writePlacementOnly(Data_Link $link, array &$options) : void
+	{
+		$options[] = Dao::linkClassOnly();
+	}
+
+	/**
+	 * Old databases can contain empty uploads or files that are not images.
+	 */
+	public function mapImage() : ?Image
+	{
+		$content = $this->image ? $this->image->getContent() : null;
+		return ($content && @getimagesizefromstring($content))
+			? Image::createFromString($content)
+			: null;
+	}
+
 	//------------------------------------------------------------------------------------------- uri
 	/**
 	 * Generates the tile image with the right orientation, and returns an URI to this image
@@ -21,10 +41,11 @@ trait Has_Image_And_Orientation
 	public function uri()
 	{
 		/** @var $this Tile|Token|self */
-		$image = Image::createFromFile($this->image);
-		/** @var $session_files Files */
-		$session_files = Session::current()->get(Files::class, true);
-		$uri = $session_files->addAndGetLink($image->asFile(uniqid() . DOT . rLastParse($this->image->name, DOT)));
+		$image = $this->mapImage();
+		if (!$image) {
+			return Paths::$project_uri . '/tickleman/zombiciderocks/img/missing-image.svg';
+		}
+		$uri = $image->asFile(uniqid() . DOT . rLastParse($this->image->name, DOT))->link();
 		if ($this->orientation !== Orientation::NORTH) {
 			$uri .= '?rotate=' . Orientation::angle($this->orientation);
 		}

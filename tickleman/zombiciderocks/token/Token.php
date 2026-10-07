@@ -2,7 +2,8 @@
 namespace Tickleman\ZombicideRocks;
 
 use ITRocks\Framework\Dao\File;
-use ITRocks\Framework\Objects\Code;
+use ITRocks\Framework\Traits\Has_Code;
+use ITRocks\Framework\Traits\Has_Name;
 use Tickleman\ZombicideRocks\Box\Token_Box;
 
 /**
@@ -13,8 +14,10 @@ use Tickleman\ZombicideRocks\Box\Token_Box;
  * @list boxes.name, name, image.name
  * @representative name
  */
-class Token extends Code
+class Token
 {
+	use Has_Code;
+	use Has_Name;
 
 	//---------------------------------------------------------------------------------------- $boxes
 	/**
@@ -34,7 +37,7 @@ class Token extends Code
 	/**
 	 * @return string
 	 */
-	public function __toString()
+	public function __toString() : string
 	{
 		return strval($this->name);
 	}

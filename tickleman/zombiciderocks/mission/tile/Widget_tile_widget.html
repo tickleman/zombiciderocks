@@ -14,21 +14,21 @@
 	<table class="mission tiles">
 		<tr class="more top">
 			<td class="more top left"></td>
-			<!--grid.columns--><td class="more top">|top|</td><!--grid.columns-->
+			<!--grid.columns--><td class="more top">|top|</td><!--end-->
 			<td class="more top right"></td>
 		</tr>
 		<!--grid.toGrid-->
 		<tr>
 			<td class="more left">|left|</td>
 			<!--.-->
-			<td><img data-code="{code}" data-orientation="{orientation}" src="{uri}"></td>
-			<!--.-->
+			<td><!--.?--><img alt="{code}" data-code="{code}" data-orientation="{orientation}" src="app://{uri}"><!--end--></td>
+			<!--end-->
 			<td class="more right">|right|</td>
 		</tr>
-		<!--grid.toGrid-->
+		<!--end-->
 		<tr class="more bottom">
 			<td class="more bottom left"></td>
-			<!--grid.columns--><td class="more bottom">|bottom|</td><!--grid.columns-->
+			<!--grid.columns--><td class="more bottom">|bottom|</td><!--end-->
 			<td class="more bottom right"></td>
 		</tr>
 	</table>
@@ -42,13 +42,13 @@
 				<ul>
 					<!--tiles-->
 					<li data-code="{code}">
-						{image.@image('100')}
+						<img alt="{code}" src="app://{imageUri}" width="100" height="100">
 						<span>{code}</span>
 					</li>
-					<!--tiles-->
+					<!--end-->
 				</ul>
 			</li>
-			<!--mission.material-->
+			<!--end-->
 		</ul>
 	</div>
 
@@ -63,7 +63,7 @@
 		</ul>
 	</div>
 
-	<!--mission.material?-->
+	<!--end-->
 	<!--!mission.material?-->
 
 	<div class="map editor instructions">
@@ -73,7 +73,7 @@
 		</ul>
 	</div>
 
-	<!--!mission.material?-->
+	<!--end-->
 
 <!--END-->
 </body>

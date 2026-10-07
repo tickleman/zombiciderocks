@@ -9,7 +9,17 @@
 	"minimum-stability": "dev",
 	"name":              "tickleman/zombiciderocks",
 	"prefer-stable":     true,
-	"repositories":      [{ "type": "composer", "url": "https://packages.bappli.com" }],
-	"require":           { "itrocks/framework": "dev-master" },
-	"type":              "itrocks-final"
+	"repositories":      [{ "type": "composer", "url": "https://git.crafter.fr/internal" }],
+	"require":           {
+		"ext-gd":            "*",
+		"itrocks/framework": "dev-0.2.2303 as dev-master",
+		"php":               "^8.1"
+	},
+	"type":              "itrocks-final",
+	"config": {
+		"allow-plugins": {
+			"composer/installers": true,
+			"oomphinc/composer-installers-extender": true
+		}
+	}
 }

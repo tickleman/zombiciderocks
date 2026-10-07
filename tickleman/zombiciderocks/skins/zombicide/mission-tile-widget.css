@@ -1,30 +1,46 @@
-.mission.edit.window .multiple.tiles img {
+article.mission.edit #tab_map :is(.component-objects, .objects).tiles {
+  display: block; }
+article.mission.edit :is(.component-objects, .objects).tiles img {
   cursor: pointer; }
-  .mission.edit.window .multiple.tiles img.ui-draggable-dragging {
+  article.mission.edit :is(.component-objects, .objects).tiles img.ui-draggable-dragging {
     opacity: .5; }
-.mission.edit.window .multiple.tiles .mission.tiles tr:hover {
+article.mission.edit :is(.component-objects, .objects).tiles .mission.tiles {
+  border-collapse: collapse;
+  border-spacing: 0;
+  display: table; }
+article.mission.edit :is(.component-objects, .objects).tiles .mission.tiles > tbody {
+  display: table-row-group; }
+article.mission.edit :is(.component-objects, .objects).tiles .mission.tiles tr {
+  display: table-row; }
+article.mission.edit :is(.component-objects, .objects).tiles .mission.tiles tr:hover {
   background-color: inherit; }
-.mission.edit.window .multiple.tiles .mission.tiles tr td {
+article.mission.edit :is(.component-objects, .objects).tiles .mission.tiles tr td {
   color: transparent;
   font-size: 1px;
   padding: 0;
   vertical-align: middle; }
-  .mission.edit.window .multiple.tiles .mission.tiles tr td.ui-droppable-hover {
+  article.mission.edit :is(.component-objects, .objects).tiles .mission.tiles tr td:not(.more) {
+    height: 250px;
+    min-width: 250px;
+    width: 250px; }
+  article.mission.edit :is(.component-objects, .objects).tiles .mission.tiles tr td > img {
+    display: block; }
+  article.mission.edit :is(.component-objects, .objects).tiles .mission.tiles tr td.ui-droppable-hover {
     filter: brightness(110%); }
-  .mission.edit.window .multiple.tiles .mission.tiles tr td.more {
+  article.mission.edit :is(.component-objects, .objects).tiles .mission.tiles tr td.more {
     background-color: lightgray; }
-    .mission.edit.window .multiple.tiles .mission.tiles tr td.more.bottom, .mission.edit.window .multiple.tiles .mission.tiles tr td.more.top {
+    article.mission.edit :is(.component-objects, .objects).tiles .mission.tiles tr td.more.bottom, article.mission.edit :is(.component-objects, .objects).tiles .mission.tiles tr td.more.top {
       height: 50px; }
-    .mission.edit.window .multiple.tiles .mission.tiles tr td.more.left, .mission.edit.window .multiple.tiles .mission.tiles tr td.more.right {
+    article.mission.edit :is(.component-objects, .objects).tiles .mission.tiles tr td.more.left, article.mission.edit :is(.component-objects, .objects).tiles .mission.tiles tr td.more.right {
       min-width: 50px; }
-.mission.edit.window .multiple.tiles .tiles.material {
+article.mission.edit :is(.component-objects, .objects).tiles .tiles.material {
   right: 90px; }
-  .mission.edit.window .multiple.tiles .tiles.material > ul > li > ul {
+  article.mission.edit :is(.component-objects, .objects).tiles .tiles.material > ul > li > ul {
     width: 210px; }
-    .mission.edit.window .multiple.tiles .tiles.material > ul > li > ul > li {
+    article.mission.edit :is(.component-objects, .objects).tiles .tiles.material > ul > li > ul > li {
       display: inline-block;
       position: relative; }
-      .mission.edit.window .multiple.tiles .tiles.material > ul > li > ul > li > span {
+      article.mission.edit :is(.component-objects, .objects).tiles .tiles.material > ul > li > ul > li > span {
         background-color: darkgray;
         bottom: 4px;
         font-weight: bold;

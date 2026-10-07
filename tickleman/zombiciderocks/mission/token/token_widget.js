@@ -1,9 +1,10 @@
 $(document).ready(function()
 {
-	$('.mission.edit.window').build(function ()
+	$('body').build('call', 'article.mission.edit', function ()
 	{
 		var directional_keys;
 		var disable_anchor;
+		var $editor = this;
 		var draggable;
 		var right_click;
 		var shift_click;
@@ -12,7 +13,7 @@ $(document).ready(function()
 		var setValue = function()
 		{
 			var values = [];
-			$('.mission.tokens li').each(function() {
+			$editor.find('.mission.tokens li').each(function() {
 				var $li    = $(this);
 				var $image = $li.find('img');
 				values.push([
@@ -22,7 +23,7 @@ $(document).ready(function()
 					$image.data('orientation')
 				]);
 			});
-			$('input[name=tokens]').attr('value', JSON.stringify(values));
+			$editor.find('input[name=tokens]').attr('value', JSON.stringify(values));
 		};
 		setValue();
 
@@ -30,7 +31,7 @@ $(document).ready(function()
 		/**
 		 * Shift-click a token to remove it from the map
 		 */
-		this.inside('.mission.tokens img').click(shift_click = function(event)
+		this.find('.mission.tokens img').click(shift_click = function(event)
 		{
 			if (event.shiftKey) {
 				$(this).closest('li').remove();
@@ -44,7 +45,7 @@ $(document).ready(function()
 		 *
 		 * @param event
 		 */
-		this.inside('.mission.tokens img').contextmenu(right_click = function(event)
+		this.find('.mission.tokens img').contextmenu(right_click = function(event)
 		{
 			var $img    = $(this);
 			var convert = { 0: 'north', 90: 'west', 180: 'south', 270: 'east' };
@@ -60,8 +61,8 @@ $(document).ready(function()
 		/**
 		 * Tokens on the map and the material tokens list are draggable : works at an image level
 		 */
-		this.inside('.mission.tokens img, .tokens.material img').draggable(draggable = {
-			appendTo: this.inside('.mission.tiles'),
+		this.find('.mission.tokens img, .tokens.material img').draggable(draggable = {
+			appendTo: this.find('.mission.tiles'),
 			classes:  { 'ui-draggable-handle': 'token' },
 			grid:     [5, 5],
 			helper:   'clone',
@@ -69,14 +70,14 @@ $(document).ready(function()
 		});
 
 		//--------------------------------------------------------------------------------------- map token disable anchors
-		this.inside('.mission.tokens a').click(disable_anchor = function(event)
+		this.find('.mission.tokens a').click(disable_anchor = function(event)
 		{
 			$(this).focus();
 			event.preventDefault();
 		});
 
 		//-------------------------------------------------------------------------------------- map token directional keys
-		this.inside('.mission.tokens a').keydown(directional_keys = function(event)
+		this.find('.mission.tokens a').keydown(directional_keys = function(event)
 		{
 			var $tile = $(this).closest('li');
 			switch (event.keyCode) {
@@ -93,7 +94,7 @@ $(document).ready(function()
 		/**
 		 * Map tokens are droppable : works at a ul>li level
 		 */
-		this.inside('.mission.tiles').droppable({
+		this.find('.mission.tiles').droppable({
 			accept:    'img.token',
 			tolerance: 'fit',
 
@@ -101,7 +102,7 @@ $(document).ready(function()
 			{
 				var $draggable = ui.draggable;
 				var $dragged   = ui.helper;
-				var $tokens    = $('.mission.tokens');
+				var $tokens    = $editor.find('.mission.tokens');
 
 				var position = $dragged.position();
 				var code     = $draggable.parent().data('code');
@@ -114,7 +115,7 @@ $(document).ready(function()
 				if ($draggable.closest('.tokens.material').length) {
 					$li = $(
 						'<li>'
-						+ '<a><img data-code="' + code + '" src="' + src + '" data-orientation="north"></a>'
+						+ '<a><img alt="' + code + '" data-code="' + code + '" src="' + src + '" data-orientation="north"></a>'
 						+ '</li>'
 					);
 					$tokens.append($li);

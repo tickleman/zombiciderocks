@@ -108,7 +108,7 @@ class Grid
 	protected function initGrid()
 	{
 		list($width, $height) = $this->dimensions();
-		return ($height && $width) ? array_fill(0, $height - 1, array_fill(0, $width - 1, null)) : [];
+		return ($height && $width) ? array_fill(0, $height, array_fill(0, $width, null)) : [];
 	}
 
 	//---------------------------------------------------------------------------------------- toGrid
@@ -132,21 +132,20 @@ class Grid
 	{
 		$grid = $this->toGrid();
 		if ($grid) {
+			$tile_image = null;
 			foreach ($this->mission->tiles as $tile) {
-				if ($tile->image) {
-					$tile_image = Image::createFromFile($tile->image);
+				if ($tile_image = $tile->mapImage()) {
 					break;
 				}
 			}
-			if (isset($tile_image)) {
+			if ($tile_image) {
 				$image = $tile_image->newImageKeepsAlpha(
 					$this->width  * $tile_image->width,
 					$this->height * $tile_image->height
 				);
 				foreach ($grid as $top => $row) {
 					foreach ($row as $left => $tile) {
-						if ($tile && $tile->image) {
-							$tile_image = Image::createFromFile($tile->image);
+						if ($tile && ($tile_image = $tile->mapImage())) {
 							if ($tile->orientation !== Orientation::NORTH) {
 								$tile_image = $tile_image->rotate(Orientation::angle($tile->orientation));
 							}
@@ -154,12 +153,20 @@ class Grid
 						}
 					}
 				}
+				// Composite token alpha over the tiles instead of replacing their pixels.
+				imagealphablending($image->resource, true);
 				foreach ($this->mission->tokens as $token) {
-					$token_image = Image::createFromFile($token->image);
+					$token_image = $token->mapImage();
+					if (!$token_image) {
+						continue;
+					}
 					if ($token->orientation !== Orientation::NORTH) {
 						$token_image = $token_image->rotate(Orientation::angle($token->orientation));
 					}
-					$image->paste($token_image, $token->left, $token->top);
+					imagecopy(
+						$image->resource, $token_image->resource, $token->left, $token->top,
+						0, 0, $token_image->width, $token_image->height
+					);
 				}
 				return $image;
 			}

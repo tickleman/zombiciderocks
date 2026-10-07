@@ -1,7 +1,13 @@
-.mission.edit.window .multiple {
+article.mission.edit :is(.component-objects, .objects) {
 
 	&.tiles, &.tokens {
+		background-color: transparent;
 		border: none;
+
+		.mission.tiles > tbody,
+		.mission.tokens > li {
+			background-color: transparent;
+		}
 
 		> div {
 			padding: 0;

@@ -46,7 +46,7 @@ class Widget extends Property
 	/**
 	 * @return string
 	 */
-	public function buildHtml()
+	public function buildHtml() : string
 	{
 		$this->mission = $this->template->getParameter(Mission::class);
 		$this->grid    = new Grid($this->mission);
@@ -60,17 +60,17 @@ class Widget extends Property
 	 * @param $null_if_empty boolean
 	 * @return Tile[]
 	 */
-	public function buildValue($object, $null_if_empty)
+	public function buildValue(object $object, bool $null_if_empty) : mixed
 	{
 		$top   = 0;
 		$tiles = [];
-		foreach (json_decode($this->value) as $row) {
+		foreach (json_decode(strval($this->value)) as $row) {
 			$left = 0;
 			$top ++;
 			foreach ($row as $cell) {
+				$left ++;
 				if ($cell) {
 					list($code, $orientation) = $cell;
-					$left ++;
 					$tile              = new Tile();
 					$tile->left        = $left;
 					$tile->orientation = $orientation;

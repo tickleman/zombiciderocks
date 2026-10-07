@@ -1,10 +1,10 @@
-.mission.edit.window {
+article.mission.edit {
 
 	#tab_map {
 		position: relative;
 	}
 
-	.multiple.tokens {
+	:is(.component-objects, .objects).tokens {
 		position: absolute;
 		top: 0;
 

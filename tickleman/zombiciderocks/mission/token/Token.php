@@ -8,7 +8,9 @@ use Tickleman\ZombicideRocks\Mission;
 /**
  * A Zombicide token into a mission
  *
+ * @before_write writePlacementOnly
  * @display_order token, top, left, orientation
+ * @override boxes @link Map
  * @link ZombicideRocks\Token
  * @set Missions_Tokens
  * @sort top, left

@@ -4,6 +4,7 @@ namespace Tickleman\ZombicideRocks;
 use ITRocks\Framework\Dao\File;
 use ITRocks\Framework\Mapper\Component;
 use ITRocks\Framework\Traits\Has_Code;
+use ITRocks\Framework\Tools\Paths;
 use Tickleman\ZombicideRocks\Tile\Tag;
 
 /**
@@ -41,6 +42,17 @@ class Tile
 	 * @var Tag[]
 	 */
 	public $tags;
+
+	/**
+	 * Keep tiles with missing legacy uploads selectable in the map editor.
+	 */
+	public function imageUri() : string
+	{
+		$content = $this->image ? $this->image->getContent() : null;
+		return ($content && @getimagesizefromstring($content))
+			? $this->image->link()
+			: Paths::$project_uri . '/tickleman/zombiciderocks/img/missing-image.svg';
+	}
 
 	//------------------------------------------------------------------------------------ __toString
 	/**

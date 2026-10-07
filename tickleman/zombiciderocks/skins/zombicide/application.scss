@@ -2,12 +2,12 @@ body {
 
 	background: url("img/mission-border.jpg") no-repeat right bottom;
 
-	header {
+	> header {
 		background-image: url("img/shadows.jpg");
 		height: 94px;
 	}
 
-	h1 {
+	> header h1 {
 		background: -webkit-linear-gradient(#eee, #333);
 		font-size: 72px;
 		font-style: italic;
@@ -55,13 +55,29 @@ body {
 			url("img/biohazard.png") no-repeat 250px 1400px;
 		background-size: 600px;
 		margin-right: 90px;
-
-		> * {
-			margin: .5em 1em 1em;
-		}
 	}
 
 	#trashcan {
 		display: none;
 	}
 }
+
+/* The current framework uses a grid layout; this application keeps its own frame. */
+body { display: flex; flex-direction: column; }
+body > header { flex: 0 0 94px; position: relative; }
+body > nav#menu { display: block; flex: 0 0 auto; overflow: visible; }
+body > nav#menu > ul { overflow: visible; }
+body > main#main { flex: 1; overflow: auto; margin: 0; }
+body > header h1 { display: block; }
+body #messages { position: absolute; right: 1em; top: 0; z-index: 3; }
+article.mission.edit #tab_map > ol > li:is(.component-objects, .objects) { padding: 0; border: none; }
+article.mission.edit #tab_map > ol > li:is(.component-objects, .objects) > label { display: none; }
+article.mission.edit :is(.component-objects, .objects) .material { top: 170px; max-width: 220px; }
+article.mission.edit :is(.component-objects, .objects) .material img { max-width: 100px; }
+
+article.mission.edit #tab_map :is(.component-objects, .objects) > label { display: none; }
+article.mission.edit #tab_map :is(.component-objects, .objects) .material { top: 170px; bottom: 0; max-width: none; }
+article.mission.edit #tab_map :is(.component-objects, .objects).tiles .material { right: 0; width: 220px; }
+article.mission.edit #tab_map :is(.component-objects, .objects).tokens .material { right: 225px; width: 120px; }
+
+article.mission.edit #tab_map :is(.component-objects, .objects) .material { height: calc(100vh - 170px); }

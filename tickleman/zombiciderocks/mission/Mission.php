@@ -2,8 +2,6 @@
 namespace Tickleman\ZombicideRocks;
 
 use ITRocks\Framework\Dao;
-use ITRocks\Framework\Dao\File\Session_File\Files;
-use ITRocks\Framework\Session;
 use ITRocks\Framework\Traits\Has_Code;
 use Tickleman\ZombicideRocks\Campaign\Campaign_Mission;
 use /** @noinspection PhpUnusedAliasInspection $url @widget */ Tickleman\ZombicideRocks\Link\Url;
@@ -273,7 +271,7 @@ class Mission
 	 */
 	public function tileCodes()
 	{
-		$tile_codes = array_map(function(Tile $tile) { return $tile->code; }, $this->tiles);
+		$tile_codes = array_map(function(Mission\Tile $tile) { return $tile->code; }, $this->tiles);
 		sort($tile_codes);
 		return $tile_codes;
 	}
@@ -289,11 +287,10 @@ class Mission
 		if (!isset($this->tiles_image)) {
 			$grid            = new Grid($this);
 			$image           = $grid->toImage();
-			$image_file_name = 'mission-' . strtolower($this->code) . '.jpg';
-			/** @var $session_files Files */
-			$session_files     = Session::current()->get(Files::class, true);
+			$image_file_name = 'mission-' . strtolower($this->code) . '.'
+				. ($image ? $image->fileExtension() : 'jpg');
 			$this->tiles_image = $image
-				? $session_files->addAndGetLink($image->asFile($image_file_name))
+				? $image->asFile($image_file_name)->link()
 				: '';
 		}
 		return $this->tiles_image;

@@ -5,6 +5,8 @@ use ITRocks\Framework\Controller\Uri;
 use ITRocks\Framework\Plugin\Register;
 use ITRocks\Framework\Plugin\Registerable;
 use ITRocks\Framework\Tools\Paths;
+use ITRocks\Framework\User\Authenticate\Controller as Authenticate_Controller;
+use ITRocks\Framework\View;
 use ITRocks\Framework\View\Html\Template;
 
 /**
@@ -12,6 +14,15 @@ use ITRocks\Framework\View\Html\Template;
  */
 class Routes implements Registerable
 {
+
+	/** Authentication return URLs from Uri::previous() omit the application base path. */
+	public function authenticationReturn(string $uri, &$result) : void
+	{
+		$path = parse_url($uri, PHP_URL_PATH) ?: $uri;
+		if (preg_match('~^/membre/(authenticate|disconnect|login)(?:/|$)~', $path)) {
+			$result = '/';
+		}
+	}
 
 	//---------------------------------------------------------------------------------------- ROUTES
 	const ROUTES = [
@@ -76,12 +87,16 @@ class Routes implements Registerable
 
 	//-------------------------------------------------------------------------------------- register
 	/**
-	 * Registration code : thread of #REDIRECT
+	 * Registration code: thread of #REDIRECT
 	 *
 	 * @param $register Register
 	 */
-	public function register(Register $register)
+	public function register(Register $register) : void
 	{
+		$register->aop->afterMethod(
+			[Authenticate_Controller::class, 'reserved'], [$this, 'authenticationReturn']
+		);
+		$register->aop->afterMethod ([View::class, 'link'], [$this, 'linkToRoute']);
 		$register->aop->afterMethod ([Template::class, 'replaceLink'], [$this, 'linkToRoute']);
 		$register->aop->beforeMethod([Uri::class, '__construct'],      [$this, 'routeToUri']);
 	}
