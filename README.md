@@ -74,43 +74,44 @@ Pour maîtriser les règles :
 
 ## Install a development environment
 
-- You need MySQL 5.5+, Apache 2.2+ and PHP 7.1+ running as an Apache Module. Look at [https://itrocks.org/wiki/creer-une-application] for a french tutorial about prerequisites.
+- You need MySQL 5.5+, Apache 2.2+ and PHP 8.1+ with the GD extension running as an Apache Module. Look at [https://itrocks.org/wiki/creer-une-application] for a french tutorial about prerequisites.
 
-- Create a loc.php file containing (replace database name and login with yours) :
+- Copy the development configuration to the project root :
 
-```php
-use ITRocks\Framework\Configuration;
-use ITRocks\Framework\Configuration\Environment;
-use ITRocks\Framework\Dao\Mysql\Link;
-
-$loc = [
-	Configuration::ENVIRONMENT => Environment::DEVELOPMENT,
-	Link::class => [
-		Link::DATABASE => 'tickleman_zombiciderocks',
-		Link::LOGIN    => 'tickleman_zombic'
-	]
-];
+```sh
+cp environment/loc.dev.php loc.php
+cp environment/pwd.blank.php pwd.php
 ```
 
-- create a pwd.php file containing (replace password with yours) :
-```php
-<?php
-use ITRocks\Framework\Dao\Mysql\Link;
-
-$pwd = [
-	Link::class => 'apasswordfordatabase'
-];
-```
+- Adjust the database name, host and login in `loc.php`, and fill in the database password in `pwd.php`. These two local files are ignored by Git. The versioned templates in `environment/` must contain no passwords.
 
 - create your database with MySQL, and give all access to this database to your database user.
 
 - install dependencies :\
 ```php composer.phar update```
 
+## Deploy to production
+
+The `environment/` directory contains the development and production configurations. The framework reads `loc.php` and `pwd.php` from the project root.
+
+```sh
+cp environment/loc.prod.php loc.php
+```
+
+Adjust the database settings in `loc.php` for the server. Verify contained values before deployment.
+
+On the first installation only, copy `environment/pwd.blank.php` to `pwd.php` and fill in the password. Preserve the existing `pwd.php` on subsequent deployments.
+
+After installing the code and selecting or changing the environment, request a framework cache update :
+
+```sh
+touch update
+```
+
 ## How did you...
 
 - Create my favicons for all platforms ?
-  Turned the biohazard logo black and generated favicons using [http://realfavicongenerator.net/]
+  Turned the biohazard logo black and generated favicons using [realfavicongenerator](http://realfavicongenerator.net/).
 
 ## Disclaimer
 
